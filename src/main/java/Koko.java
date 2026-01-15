@@ -7,7 +7,9 @@ public class Koko {
     enum CommandType {
         BYE,
         ADD,
-        LIST;
+        LIST,
+        MARK,
+        UNMARK
     }
 
     public static void main(String[] args) {
@@ -15,7 +17,7 @@ public class Koko {
         taskList = new TaskList();
         System.out.println(
                 "Hello! I'm Koko\n"
-                + "What can I do for you?\n"
+                        + "What can I do for you?\n"
         );
         handleInput(sc);
     }
@@ -33,11 +35,31 @@ public class Koko {
                         System.out.println("Bye. Hope to see you again soon!\n");
                         return;
                     case ADD:
-                        taskList.addTask(new Task(arg));
+                        Task task = new Task(arg);
+                        taskList.addTask(task);
+                        System.out.println("added: " + task.toString());
                         break;
                     case LIST:
                         taskList.listTasks();
                         break;
+                    case MARK: {
+                        int taskIndex = Integer.parseInt(arg);
+                        Task markedTask = taskList.markTask(taskIndex);
+                        System.out.println(
+                                "Nice! I've marked this task as done:\n"
+                                        + markedTask.toString()
+                        );
+                        break;
+                    }
+                    case UNMARK: {
+                        int taskIndex = Integer.parseInt(arg);
+                        Task unmarkedTask = taskList.unmarkTask(taskIndex);
+                        System.out.println(
+                                "OK, I've marked this task as not done yet:\n"
+                                        + unmarkedTask.toString()
+                        );
+                        break;
+                    }
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("Unknown command!");

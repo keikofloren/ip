@@ -9,12 +9,19 @@ public class TaskList {
 
     public void addTask(Task task) {
         this.tasks.add(task);
-        System.out.println("added: " + task.toString());
     }
 
     public void listTasks() {
         for (int i = 0; i < tasks.toArray().length; i++) {
             System.out.println((i + 1) + ". " + tasks.get(i).toString());
         }
+    }
+
+    public Task markTask(int index) {
+        return this.tasks.get(index - 1).mark();
+    }
+
+    public Task unmarkTask(int index) {
+        return this.tasks.get(index - 1).unmark();
     }
 }
