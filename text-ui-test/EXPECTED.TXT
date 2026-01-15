@@ -38,5 +38,12 @@ OK, I've marked this task as not done yet:
 2. [D][X] CS2103T ip (by: Friday 23 Jan)
 3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 
+Noted. I've removed this task:
+[T][ ] CS2109S ps0
+Now you have 2 tasks in the list.
+
+1. [D][X] CS2103T ip (by: Friday 23 Jan)
+2. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
+
 Bye. Hope to see you again soon!
 

@@ -11,7 +11,8 @@ public class Koko {
         EVENT,
         LIST,
         MARK,
-        UNMARK
+        UNMARK,
+        DELETE
     }
 
     public static void main(String[] args) {
@@ -36,29 +37,27 @@ public class Koko {
                     case BYE:
                         HandleBye();
                         return;
-                    case TODO: {
+                    case TODO:
                         HandleToDo(arg);
                         break;
-                    }
-                    case DEADLINE: {
+                    case DEADLINE:
                         HandleDeadline(arg);
                         break;
-                    }
-                    case EVENT: {
+                    case EVENT:
                         HandleEvent(arg);
                         break;
-                    }
                     case LIST:
                         HandleList();
                         break;
-                    case MARK: {
+                    case MARK:
                         HandleMark(arg);
                         break;
-                    }
-                    case UNMARK: {
+                    case UNMARK:
                         HandleUnmark(arg);
                         break;
-                    }
+                    case DELETE:
+                        HandleDelete(arg);
+                        break;
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("Unknown command!");
@@ -75,7 +74,7 @@ public class Koko {
         taskList.addTask(task);
         System.out.println(
                 "Got it. I've added this task:\n"
-                        + task.toString() + "\n"
+                        + task + "\n"
                         + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
         );
     }
@@ -88,7 +87,7 @@ public class Koko {
         taskList.addTask(task);
         System.out.println(
                 "Got it. I've added this task:\n"
-                        + task.toString() + "\n"
+                        + task + "\n"
                         + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
         );
     }
@@ -103,7 +102,7 @@ public class Koko {
         taskList.addTask(task);
         System.out.println(
                 "Got it. I've added this task:\n"
-                        + task.toString() + "\n"
+                        + task + "\n"
                         + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
         );
     }
@@ -127,6 +126,16 @@ public class Koko {
         System.out.println(
                 "OK, I've marked this task as not done yet:\n"
                         + unmarkedTask.toString() + "\n"
+        );
+    }
+
+    private static void HandleDelete(String arg) {
+        int taskIndex = Integer.parseInt(arg);
+        Task deletedTask = taskList.deleteTask(taskIndex);
+        System.out.println(
+                "Noted. I've removed this task:\n"
+                        + deletedTask + "\n"
+                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
         );
     }
 }

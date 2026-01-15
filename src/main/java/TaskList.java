@@ -29,4 +29,10 @@ public class TaskList {
     public Task unmarkTask(int index) {
         return this.tasks.get(index - 1).unmark();
     }
+
+    public Task deleteTask(int index) {
+        Task deletedTask = this.tasks.get(index - 1);
+        this.tasks.remove(index - 1);
+        return deletedTask;
+    }
 }
