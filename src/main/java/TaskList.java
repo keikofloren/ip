@@ -17,6 +17,10 @@ public class TaskList {
         }
     }
 
+    public String numberOfTasks() {
+        return String.valueOf(tasks.size());
+    }
+
     public Task markTask(int index) {
         return this.tasks.get(index - 1).mark();
     }

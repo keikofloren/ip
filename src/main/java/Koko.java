@@ -6,7 +6,9 @@ public class Koko {
 
     enum CommandType {
         BYE,
-        ADD,
+        TODO,
+        DEADLINE,
+        EVENT,
         LIST,
         MARK,
         UNMARK
@@ -34,11 +36,44 @@ public class Koko {
                     case BYE:
                         System.out.println("Bye. Hope to see you again soon!\n");
                         return;
-                    case ADD:
-                        Task task = new Task(arg);
+                    case TODO: {
+                        ToDoTask task = new ToDoTask(arg);
                         taskList.addTask(task);
-                        System.out.println("added: " + task.toString());
+                        System.out.println(
+                                "Got it. I've added this task:\n"
+                                        + task.toString() + "\n"
+                                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
+                        );
                         break;
+                    }
+                    case DEADLINE: {
+                        String[] argArray = arg.split(" /by ");
+                        String taskDescription = argArray[0];
+                        String deadline = argArray[1];
+                        DeadlineTask task = new DeadlineTask(taskDescription, deadline);
+                        taskList.addTask(task);
+                        System.out.println(
+                                "Got it. I've added this task:\n"
+                                        + task.toString() + "\n"
+                                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
+                        );
+                        break;
+                    }
+                    case EVENT: {
+                        String[] argArray =  arg.split(" /from ");
+                        String taskDescription = argArray[0];
+                        String[] argArray2 = argArray[1].split(" /to ");
+                        String startTime = argArray2[0];
+                        String endTime = argArray2[1];
+                        EventTask task = new EventTask(taskDescription, startTime, endTime);
+                        taskList.addTask(task);
+                        System.out.println(
+                                "Got it. I've added this task:\n"
+                                        + task.toString() + "\n"
+                                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
+                        );
+                        break;
+                    }
                     case LIST:
                         taskList.listTasks();
                         break;
