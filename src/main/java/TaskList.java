@@ -15,6 +15,7 @@ public class TaskList {
         for (int i = 0; i < tasks.toArray().length; i++) {
             System.out.println((i + 1) + ". " + tasks.get(i).toString());
         }
+        System.out.println();
     }
 
     public String numberOfTasks() {

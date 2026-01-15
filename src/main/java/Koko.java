@@ -34,65 +34,29 @@ public class Koko {
                 CommandType commandType = CommandType.valueOf(command);
                 switch (commandType) {
                     case BYE:
-                        System.out.println("Bye. Hope to see you again soon!\n");
+                        HandleBye();
                         return;
                     case TODO: {
-                        ToDoTask task = new ToDoTask(arg);
-                        taskList.addTask(task);
-                        System.out.println(
-                                "Got it. I've added this task:\n"
-                                        + task.toString() + "\n"
-                                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
-                        );
+                        HandleToDo(arg);
                         break;
                     }
                     case DEADLINE: {
-                        String[] argArray = arg.split(" /by ");
-                        String taskDescription = argArray[0];
-                        String deadline = argArray[1];
-                        DeadlineTask task = new DeadlineTask(taskDescription, deadline);
-                        taskList.addTask(task);
-                        System.out.println(
-                                "Got it. I've added this task:\n"
-                                        + task.toString() + "\n"
-                                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
-                        );
+                        HandleDeadline(arg);
                         break;
                     }
                     case EVENT: {
-                        String[] argArray =  arg.split(" /from ");
-                        String taskDescription = argArray[0];
-                        String[] argArray2 = argArray[1].split(" /to ");
-                        String startTime = argArray2[0];
-                        String endTime = argArray2[1];
-                        EventTask task = new EventTask(taskDescription, startTime, endTime);
-                        taskList.addTask(task);
-                        System.out.println(
-                                "Got it. I've added this task:\n"
-                                        + task.toString() + "\n"
-                                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
-                        );
+                        HandleEvent(arg);
                         break;
                     }
                     case LIST:
-                        taskList.listTasks();
+                        HandleList();
                         break;
                     case MARK: {
-                        int taskIndex = Integer.parseInt(arg);
-                        Task markedTask = taskList.markTask(taskIndex);
-                        System.out.println(
-                                "Nice! I've marked this task as done:\n"
-                                        + markedTask.toString()
-                        );
+                        HandleMark(arg);
                         break;
                     }
                     case UNMARK: {
-                        int taskIndex = Integer.parseInt(arg);
-                        Task unmarkedTask = taskList.unmarkTask(taskIndex);
-                        System.out.println(
-                                "OK, I've marked this task as not done yet:\n"
-                                        + unmarkedTask.toString()
-                        );
+                        HandleUnmark(arg);
                         break;
                     }
                 }
@@ -100,5 +64,69 @@ public class Koko {
                 System.out.println("Unknown command!");
             }
         }
+    }
+
+    private static void HandleBye() {
+        System.out.println("Bye. Hope to see you again soon!\n");
+    }
+
+    private static void HandleToDo(String arg) {
+        ToDoTask task = new ToDoTask(arg);
+        taskList.addTask(task);
+        System.out.println(
+                "Got it. I've added this task:\n"
+                        + task.toString() + "\n"
+                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
+        );
+    }
+
+    private static void HandleDeadline(String arg) {
+        String[] argArray = arg.split(" /by ");
+        String taskDescription = argArray[0];
+        String deadline = argArray[1];
+        DeadlineTask task = new DeadlineTask(taskDescription, deadline);
+        taskList.addTask(task);
+        System.out.println(
+                "Got it. I've added this task:\n"
+                        + task.toString() + "\n"
+                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
+        );
+    }
+
+    private static void HandleEvent(String arg) {
+        String[] argArray =  arg.split(" /from ");
+        String taskDescription = argArray[0];
+        String[] argArray2 = argArray[1].split(" /to ");
+        String startTime = argArray2[0];
+        String endTime = argArray2[1];
+        EventTask task = new EventTask(taskDescription, startTime, endTime);
+        taskList.addTask(task);
+        System.out.println(
+                "Got it. I've added this task:\n"
+                        + task.toString() + "\n"
+                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
+        );
+    }
+
+    private static void HandleList() {
+        taskList.listTasks();
+    }
+
+    private static void HandleMark(String arg) {
+        int taskIndex = Integer.parseInt(arg);
+        Task markedTask = taskList.markTask(taskIndex);
+        System.out.println(
+                "Nice! I've marked this task as done:\n"
+                        + markedTask.toString() + "\n"
+        );
+    }
+
+    private static void HandleUnmark(String arg) {
+        int taskIndex = Integer.parseInt(arg);
+        Task unmarkedTask = taskList.unmarkTask(taskIndex);
+        System.out.println(
+                "OK, I've marked this task as not done yet:\n"
+                        + unmarkedTask.toString() + "\n"
+        );
     }
 }
