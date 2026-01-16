@@ -12,6 +12,7 @@ public class TaskList {
     }
 
     public void listTasks() {
+        System.out.println("Okay! Here is your quest list! ( •̀ᴗ•́ )و");
         for (int i = 0; i < tasks.toArray().length; i++) {
             System.out.println((i + 1) + ". " + tasks.get(i).toString());
         }

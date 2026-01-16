@@ -1,63 +1,71 @@
-Hello! I'm Koko
-What can I do for you?
+Konnichiwa!! I’m Koko (≧▽≦)
+What can I do for you today senpai? ( •̀ᴗ•́ )و
 
-OOPS!!! I'm sorry, but I don't know what that means :-(
+E-eh?! I don't understand that command... (；ω；)
 
-OOPS!!! The description of a task cannot be empty.
+Nani?! You can't give me an empty task! I need... a description!! (╥﹏╥)
 
-OOPS!!! Please use: deadline <desc> /by <deadline>.
+Hold it! Deadline magic requires: deadline <desc> /by <deadline> ( •̀д•́ )
 
-OOPS!!! Please use: event <desc> /from <start> to <end>.
+Wait wait! Event summoning ritual is: event <desc> /from <start> /to <end> (；ﾟДﾟ)
 
-Got it. I've added this task:
+Hai!! Mission accepted! (ง •̀_•́)ง
 [T][ ] CS2109S ps0
-Now you have 1 tasks in the list.
+Now you have 1 tasks in the list!
 
-Got it. I've added this task:
+Understood. I'll keep an eye on the clock. ( •̀ᴗ•́ )ゞ
 [D][ ] CS2103T ip (by: Friday 23 Jan)
-Now you have 2 tasks in the list.
+Now you have 2 tasks in the list!
 
-Got it. I've added this task:
+Ooh, a schedule arc begins. (☆_☆)
 [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 Now you have 3 tasks in the list.
 
+Okay! Here is your quest list! ( •̀ᴗ•́ )و
 1. [T][ ] CS2109S ps0
 2. [D][ ] CS2103T ip (by: Friday 23 Jan)
 3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 
-OOPS!!! Please use: mark <task index>.
+Oi, which task?! (＞﹏＜)
+Please use: mark <task index>!
 
-Nice! I've marked this task as done:
+Sugoi. Task complete! (≧▽≦)
 [T][X] CS2109S ps0
 
+Okay! Here is your quest list! ( •̀ᴗ•́ )و
 1. [T][X] CS2109S ps0
 2. [D][ ] CS2103T ip (by: Friday 23 Jan)
 3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 
-Nice! I've marked this task as done:
+Sugoi. Task complete! (≧▽≦)
 [D][X] CS2103T ip (by: Friday 23 Jan)
 
+Okay! Here is your quest list! ( •̀ᴗ•́ )و
 1. [T][X] CS2109S ps0
 2. [D][X] CS2103T ip (by: Friday 23 Jan)
 3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 
-OOPS!!! Please use: unmark <task index>.
+Ehh?! Which one do I undo?! (＠_＠;)
+Please use: mark <task index>!
 
-OK, I've marked this task as not done yet:
+O-okay… back to unfinished mode. (；﹏；)
 [T][ ] CS2109S ps0
 
+Okay! Here is your quest list! ( •̀ᴗ•́ )و
 1. [T][ ] CS2109S ps0
 2. [D][X] CS2103T ip (by: Friday 23 Jan)
 3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 
-OOPS!!! Please use: delete <task index>.
+W-wait! Delete WHICH one?! (；ﾟДﾟ)
+Please use: delete <task index>!
 
-Noted. I've removed this task:
+Poof! That task has been erased from existence! (∩_∩;)
 [T][ ] CS2109S ps0
-Now you have 2 tasks in the list.
+Now you have 2 tasks in the list!
 
+Okay! Here is your quest list! ( •̀ᴗ•́ )و
 1. [D][X] CS2103T ip (by: Friday 23 Jan)
 2. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 
-Bye. Hope to see you again soon!
+Ja ne~! Don’t forget your quests, okay? (｡•̀ᴗ•́｡)
 

@@ -19,8 +19,8 @@ public class Koko {
         Scanner sc = new Scanner(System.in);
         taskList = new TaskList();
         System.out.println(
-                "Hello! I'm Koko\n"
-                        + "What can I do for you?\n"
+                "Konnichiwa!! I’m Koko (≧▽≦)\n"
+                        + "What can I do for you today senpai? ( •̀ᴗ•́ )و\n"
         );
         handleInput(sc);
     }
@@ -78,28 +78,28 @@ public class Koko {
             }
         }
         throw new CommandNotFoundException(
-                "OOPS!!! I'm sorry, but I don't know what that means :-(\n"
+                "E-eh?! I don't understand that command... (；ω；)\n"
         );
     }
 
     private static void HandleBye() {
-        System.out.println("Bye. Hope to see you again soon!\n");
+        System.out.println("Ja ne~! Don’t forget your quests, okay? (｡•̀ᴗ•́｡)\n");
     }
 
     private static void HandleToDo(String arg) throws InvalidCommandFormatException {
         ToDoTask task = new ToDoTask(arg);
         taskList.addTask(task);
         System.out.println(
-                "Got it. I've added this task:\n"
+                "Hai!! Mission accepted! (ง •̀_•́)ง\n"
                         + task + "\n"
-                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
+                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list!\n"
         );
     }
 
     private static void HandleDeadline(String arg) throws InvalidCommandFormatException {
         if (arg == null || !arg.contains (" /by ")) {
             throw new InvalidCommandFormatException(
-                    "OOPS!!! Please use: deadline <desc> /by <deadline>.\n"
+                    "Hold it! Deadline magic requires: deadline <desc> /by <deadline> ( •̀д•́ )\n"
             );
         }
         String[] argArray = arg.split(" /by ");
@@ -108,16 +108,16 @@ public class Koko {
         DeadlineTask task = new DeadlineTask(taskDescription, deadline);
         taskList.addTask(task);
         System.out.println(
-                "Got it. I've added this task:\n"
+                "Understood. I'll keep an eye on the clock. ( •̀ᴗ•́ )ゞ\n"
                         + task + "\n"
-                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
+                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list!\n"
         );
     }
 
     private static void HandleEvent(String arg) throws InvalidCommandFormatException {
         if (arg == null || !arg.contains(" /from ") || !arg.contains(" /to ")) {
             throw new InvalidCommandFormatException(
-                    "OOPS!!! Please use: event <desc> /from <start> to <end>.\n"
+                    "Wait wait! Event summoning ritual is: event <desc> /from <start> /to <end> (；ﾟДﾟ)\n"
             );
         }
         String[] argArray =  arg.split(" /from ");
@@ -128,7 +128,7 @@ public class Koko {
         EventTask task = new EventTask(taskDescription, startTime, endTime);
         taskList.addTask(task);
         System.out.println(
-                "Got it. I've added this task:\n"
+                "Ooh, a schedule arc begins. (☆_☆)\n"
                         + task + "\n"
                         + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
         );
@@ -141,13 +141,14 @@ public class Koko {
     private static void HandleMark(String arg) throws InvalidCommandFormatException{
         if (arg == null || arg.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "OOPS!!! Please use: mark <task index>.\n"
+                    "Oi, which task?! (＞﹏＜)\n"
+                            + "Please use: mark <task index>!\n"
             );
         }
         int taskIndex = Integer.parseInt(arg);
         Task markedTask = taskList.markTask(taskIndex);
         System.out.println(
-                "Nice! I've marked this task as done:\n"
+                "Sugoi. Task complete! (≧▽≦)\n"
                         + markedTask.toString() + "\n"
         );
     }
@@ -155,13 +156,14 @@ public class Koko {
     private static void HandleUnmark(String arg) throws InvalidCommandFormatException {
         if (arg == null || arg.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "OOPS!!! Please use: unmark <task index>.\n"
+                    "Ehh?! Which one do I undo?! (＠_＠;)\n"
+                            + "Please use: mark <task index>!\n"
             );
         }
         int taskIndex = Integer.parseInt(arg);
         Task unmarkedTask = taskList.unmarkTask(taskIndex);
         System.out.println(
-                "OK, I've marked this task as not done yet:\n"
+                "O-okay… back to unfinished mode. (；﹏；)\n"
                         + unmarkedTask.toString() + "\n"
         );
     }
@@ -169,15 +171,16 @@ public class Koko {
     private static void HandleDelete(String arg) throws InvalidCommandFormatException {
         if (arg == null || arg.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "OOPS!!! Please use: delete <task index>.\n"
+                    "W-wait! Delete WHICH one?! (；ﾟДﾟ)\n"
+                            + "Please use: delete <task index>!\n"
             );
         }
         int taskIndex = Integer.parseInt(arg);
         Task deletedTask = taskList.deleteTask(taskIndex);
         System.out.println(
-                "Noted. I've removed this task:\n"
+                "Poof! That task has been erased from existence! (∩_∩;)\n"
                         + deletedTask + "\n"
-                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
+                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list!\n"
         );
     }
 }
