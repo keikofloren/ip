@@ -3,7 +3,12 @@ public class Task {
     private String description;
     private boolean isDone;
 
-    public Task(String description) {
+    public Task(String description) throws InvalidCommandFormatException {
+        if (description == null || description.isBlank()) {
+            throw new InvalidCommandFormatException(
+                    "OOPS!!! The description of a task cannot be empty.\n"
+            );
+        }
         this.description = description;
         this.isDone = false;
     }

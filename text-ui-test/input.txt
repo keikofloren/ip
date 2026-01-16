@@ -1,13 +1,20 @@
+hello
+todo
+deadline
+event
 todo CS2109S ps0
 deadline CS2103T ip /by Friday 23 Jan
 event CS2103T tutorial /from Wednesday 2pm /to 3pm
 list
+mark
 mark 1
 list
 mark 2
 list
+unmark
 unmark 1
 list
+delete
 delete 1
 list
 bye

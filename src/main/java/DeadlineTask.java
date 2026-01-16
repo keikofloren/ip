@@ -2,8 +2,13 @@ public class DeadlineTask extends Task {
 
     private String deadline;
 
-    public DeadlineTask(String description, String deadline) {
+    public DeadlineTask(String description, String deadline) throws InvalidCommandFormatException {
         super(description);
+        if (deadline.isBlank()) {
+            throw new InvalidCommandFormatException(
+                    "OOPS!!! The deadline of a deadline task cannot be empty.\n"
+            );
+        }
         this.deadline = deadline;
     }
 

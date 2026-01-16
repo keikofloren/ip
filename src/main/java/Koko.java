@@ -27,12 +27,11 @@ public class Koko {
 
     private static void handleInput(Scanner sc) {
         while (true) {
-            String input = sc.nextLine();
-            String[] inputArray = input.split(" ", 2);
-            String command = inputArray[0].toUpperCase();
-            String arg = (inputArray.length == 2) ? inputArray[1] : "";
             try {
-                CommandType commandType = CommandType.valueOf(command);
+                String input = sc.nextLine();
+                String[] parsedInput = parseInput(input);
+                CommandType commandType = parseCommand(parsedInput[0]);
+                String arg = parsedInput[1];
                 switch (commandType) {
                     case BYE:
                         HandleBye();
@@ -59,17 +58,35 @@ public class Koko {
                         HandleDelete(arg);
                         break;
                 }
-            } catch (IllegalArgumentException e) {
-                System.out.println("Unknown command!");
+            } catch (KokoException e) {
+                System.out.println(e.getMessage());
             }
         }
+    }
+
+    private static String[] parseInput(String input) {
+        String[] inputArray = input.split(" ", 2);
+        String command = inputArray[0].toUpperCase();
+        String arg = (inputArray.length == 2) ? inputArray[1] : "";
+        return new String[]{command, arg};
+    }
+
+    private static CommandType parseCommand(String command) throws CommandNotFoundException {
+        for (CommandType type : CommandType.values()) {
+            if (type.name().equals(command)) {
+                return type;
+            }
+        }
+        throw new CommandNotFoundException(
+                "OOPS!!! I'm sorry, but I don't know what that means :-(\n"
+        );
     }
 
     private static void HandleBye() {
         System.out.println("Bye. Hope to see you again soon!\n");
     }
 
-    private static void HandleToDo(String arg) {
+    private static void HandleToDo(String arg) throws InvalidCommandFormatException {
         ToDoTask task = new ToDoTask(arg);
         taskList.addTask(task);
         System.out.println(
@@ -79,7 +96,12 @@ public class Koko {
         );
     }
 
-    private static void HandleDeadline(String arg) {
+    private static void HandleDeadline(String arg) throws InvalidCommandFormatException {
+        if (arg == null || !arg.contains (" /by ")) {
+            throw new InvalidCommandFormatException(
+                    "OOPS!!! Please use: deadline <desc> /by <deadline>.\n"
+            );
+        }
         String[] argArray = arg.split(" /by ");
         String taskDescription = argArray[0];
         String deadline = argArray[1];
@@ -92,7 +114,12 @@ public class Koko {
         );
     }
 
-    private static void HandleEvent(String arg) {
+    private static void HandleEvent(String arg) throws InvalidCommandFormatException {
+        if (arg == null || !arg.contains(" /from ") || !arg.contains(" /to ")) {
+            throw new InvalidCommandFormatException(
+                    "OOPS!!! Please use: event <desc> /from <start> to <end>.\n"
+            );
+        }
         String[] argArray =  arg.split(" /from ");
         String taskDescription = argArray[0];
         String[] argArray2 = argArray[1].split(" /to ");
@@ -111,7 +138,12 @@ public class Koko {
         taskList.listTasks();
     }
 
-    private static void HandleMark(String arg) {
+    private static void HandleMark(String arg) throws InvalidCommandFormatException{
+        if (arg == null || arg.isBlank()) {
+            throw new InvalidCommandFormatException(
+                    "OOPS!!! Please use: mark <task index>.\n"
+            );
+        }
         int taskIndex = Integer.parseInt(arg);
         Task markedTask = taskList.markTask(taskIndex);
         System.out.println(
@@ -120,7 +152,12 @@ public class Koko {
         );
     }
 
-    private static void HandleUnmark(String arg) {
+    private static void HandleUnmark(String arg) throws InvalidCommandFormatException {
+        if (arg == null || arg.isBlank()) {
+            throw new InvalidCommandFormatException(
+                    "OOPS!!! Please use: unmark <task index>.\n"
+            );
+        }
         int taskIndex = Integer.parseInt(arg);
         Task unmarkedTask = taskList.unmarkTask(taskIndex);
         System.out.println(
@@ -129,7 +166,12 @@ public class Koko {
         );
     }
 
-    private static void HandleDelete(String arg) {
+    private static void HandleDelete(String arg) throws InvalidCommandFormatException {
+        if (arg == null || arg.isBlank()) {
+            throw new InvalidCommandFormatException(
+                    "OOPS!!! Please use: delete <task index>.\n"
+            );
+        }
         int taskIndex = Integer.parseInt(arg);
         Task deletedTask = taskList.deleteTask(taskIndex);
         System.out.println(

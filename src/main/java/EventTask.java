@@ -5,6 +5,11 @@ public class EventTask extends Task {
 
     public EventTask(String description, String startTime, String endTime) {
         super(description);
+        if (startTime.isBlank() || endTime.isBlank()) {
+            throw new InvalidCommandFormatException(
+                    "OOPS!!! The start/end time of an event task cannot be empty.\n"
+            );
+        }
         this.startTime = startTime;
         this.endTime = endTime;
     }

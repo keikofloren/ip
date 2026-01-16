@@ -1,6 +1,14 @@
 Hello! I'm Koko
 What can I do for you?
 
+OOPS!!! I'm sorry, but I don't know what that means :-(
+
+OOPS!!! The description of a task cannot be empty.
+
+OOPS!!! Please use: deadline <desc> /by <deadline>.
+
+OOPS!!! Please use: event <desc> /from <start> to <end>.
+
 Got it. I've added this task:
 [T][ ] CS2109S ps0
 Now you have 1 tasks in the list.
@@ -17,6 +25,8 @@ Now you have 3 tasks in the list.
 2. [D][ ] CS2103T ip (by: Friday 23 Jan)
 3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 
+OOPS!!! Please use: mark <task index>.
+
 Nice! I've marked this task as done:
 [T][X] CS2109S ps0
 
@@ -31,12 +41,16 @@ Nice! I've marked this task as done:
 2. [D][X] CS2103T ip (by: Friday 23 Jan)
 3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 
+OOPS!!! Please use: unmark <task index>.
+
 OK, I've marked this task as not done yet:
 [T][ ] CS2109S ps0
 
 1. [T][ ] CS2109S ps0
 2. [D][X] CS2103T ip (by: Friday 23 Jan)
 3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
+
+OOPS!!! Please use: delete <task index>.
 
 Noted. I've removed this task:
 [T][ ] CS2109S ps0
