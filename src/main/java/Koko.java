@@ -34,28 +34,28 @@ public class Koko {
                 String arg = parsedInput[1];
                 switch (commandType) {
                     case BYE:
-                        HandleBye();
+                        handleBye();
                         return;
                     case TODO:
-                        HandleToDo(arg);
+                        handleToDo(arg);
                         break;
                     case DEADLINE:
-                        HandleDeadline(arg);
+                        handleDeadline(arg);
                         break;
                     case EVENT:
-                        HandleEvent(arg);
+                        handleEvent(arg);
                         break;
                     case LIST:
-                        HandleList();
+                        handleList();
                         break;
                     case MARK:
-                        HandleMark(arg);
+                        handleMark(arg);
                         break;
                     case UNMARK:
-                        HandleUnmark(arg);
+                        handleUnmark(arg);
                         break;
                     case DELETE:
-                        HandleDelete(arg);
+                        handleDelete(arg);
                         break;
                 }
             } catch (KokoException e) {
@@ -82,11 +82,11 @@ public class Koko {
         );
     }
 
-    private static void HandleBye() {
+    private static void handleBye() {
         System.out.println("Ja ne~! Don’t forget your quests, okay? (｡•̀ᴗ•́｡)\n");
     }
 
-    private static void HandleToDo(String arg) throws InvalidCommandFormatException {
+    private static void handleToDo(String arg) throws InvalidCommandFormatException {
         ToDoTask task = new ToDoTask(arg);
         taskList.addTask(task);
         System.out.println(
@@ -96,7 +96,7 @@ public class Koko {
         );
     }
 
-    private static void HandleDeadline(String arg) throws InvalidCommandFormatException {
+    private static void handleDeadline(String arg) throws InvalidCommandFormatException {
         if (arg == null || !arg.contains (" /by ")) {
             throw new InvalidCommandFormatException(
                     "Hold it! Deadline magic requires: deadline <desc> /by <deadline> ( •̀д•́ )\n"
@@ -114,7 +114,7 @@ public class Koko {
         );
     }
 
-    private static void HandleEvent(String arg) throws InvalidCommandFormatException {
+    private static void handleEvent(String arg) throws InvalidCommandFormatException {
         if (arg == null || !arg.contains(" /from ") || !arg.contains(" /to ")) {
             throw new InvalidCommandFormatException(
                     "Wait wait! Event summoning ritual is: event <desc> /from <start> /to <end> (；ﾟДﾟ)\n"
@@ -134,11 +134,11 @@ public class Koko {
         );
     }
 
-    private static void HandleList() {
+    private static void handleList() {
         taskList.listTasks();
     }
 
-    private static void HandleMark(String arg) throws InvalidCommandFormatException{
+    private static void handleMark(String arg) throws InvalidCommandFormatException{
         if (arg == null || arg.isBlank()) {
             throw new InvalidCommandFormatException(
                     "Oi, which task?! (＞﹏＜)\n"
@@ -153,7 +153,7 @@ public class Koko {
         );
     }
 
-    private static void HandleUnmark(String arg) throws InvalidCommandFormatException {
+    private static void handleUnmark(String arg) throws InvalidCommandFormatException {
         if (arg == null || arg.isBlank()) {
             throw new InvalidCommandFormatException(
                     "Ehh?! Which one do I undo?! (＠_＠;)\n"
@@ -168,7 +168,7 @@ public class Koko {
         );
     }
 
-    private static void HandleDelete(String arg) throws InvalidCommandFormatException {
+    private static void handleDelete(String arg) throws InvalidCommandFormatException {
         if (arg == null || arg.isBlank()) {
             throw new InvalidCommandFormatException(
                     "W-wait! Delete WHICH one?! (；ﾟДﾟ)\n"
