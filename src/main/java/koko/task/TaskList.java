@@ -39,8 +39,8 @@ public class TaskList {
     public Task getTask(String index) {
         if (index == null || index.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "Oi, which koko.task?! (＞﹏＜)\n"
-                            + "Please state a koko.task index!\n"
+                    "Oi, which task?! (＞﹏＜)\n"
+                            + "Please state a task index!\n"
             );
         }
         int taskIndex;
@@ -49,13 +49,13 @@ public class TaskList {
         } catch (NumberFormatException e) {
             throw new InvalidCommandFormatException(
                     "That doesn't look like a number... (＠_＠;)\n"
-                            + "Please state a koko.task index!\n"
+                            + "Please state a task index!\n"
             );
         }
         int numTasks = this.numberOfTasks();
         if (taskIndex < 1 || taskIndex > numTasks) {
             throw new InvalidCommandInputException(
-                    "Ehh?! That koko.task number doesn't exist! Please use a number from 1 to "
+                    "Ehh?! That task number doesn't exist! Please use a number from 1 to "
                             + numTasks + "!\n"
             );
         }
@@ -76,5 +76,18 @@ public class TaskList {
         int i = Integer.parseInt(index);
         this.tasks.remove(i - 1);
         return deletedTask;
+    }
+
+    public void findTask(String keyword) {
+        int taskCount = 1;
+        System.out.println("Hai hai~! Here are the matching quests in your list! ( •̀ᴗ•́ )و");
+        for (int i = 0; i < this.numberOfTasks(); i++) {
+            Task task = this.getTask(i);
+            if (task.getDescription().contains(keyword)) {
+                System.out.println(taskCount + ". " + task);
+                taskCount++;
+            }
+        }
+        System.out.println();
     }
 }

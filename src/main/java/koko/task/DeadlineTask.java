@@ -14,8 +14,8 @@ public class DeadlineTask extends Task {
         super(description);
         if (deadline == null || deadline.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "Uwaaa! Your deadline koko.task is missing the /by date… (；ω；)\n"
-                        + "Please use: deadline <koko.task> /by <dd/MM/yyyy HHmm>!\n"
+                    "Uwaaa! Your deadline task is missing the /by date… (；ω；)\n"
+                        + "Please use: deadline <task> /by <dd/MM/yyyy HHmm>!\n"
             );
         }
         try {
