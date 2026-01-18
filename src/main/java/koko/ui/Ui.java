@@ -1,3 +1,7 @@
+package koko.ui;
+
+import koko.task.*;
+
 import java.util.Scanner;
 
 public class Ui {
@@ -14,7 +18,7 @@ public class Ui {
 
     public void showWelcome() {
         System.out.println(
-                "Konnichiwa!! I’m Koko (≧▽≦)\n"
+                "Konnichiwa!! I’m koko.Koko (≧▽≦)\n"
                         + "What can I do for you today senpai? ( •̀ᴗ•́ )و\n"
         );
     }
@@ -28,7 +32,7 @@ public class Ui {
     }
 
     public void showCommandNotFound() {
-        System.out.println("E-eh?! I don't understand that command... (；ω；)\n");
+        System.out.println("E-eh?! I don't understand that koko.command... (；ω；)\n");
     }
 
     public void showExit() {
@@ -61,7 +65,7 @@ public class Ui {
 
     public void showMarkTask(Task task) {
         System.out.println(
-                "Sugoi. Task complete! (≧▽≦)\n"
+                "Sugoi. koko.task.Task complete! (≧▽≦)\n"
                         + task + "\n"
         );
     }
@@ -75,7 +79,7 @@ public class Ui {
 
     public void showDeleteTask(Task task, TaskList taskList) {
         System.out.println(
-                "Poof! That task has been erased from existence! (∩_∩;)\n"
+                "Poof! That koko.task has been erased from existence! (∩_∩;)\n"
                         + task + "\n"
                         + "Now you have " + taskList.numberOfTasks() + " tasks in the list!\n"
         );

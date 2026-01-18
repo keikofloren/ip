@@ -1,3 +1,10 @@
+package koko.command;
+
+import koko.task.EventTask;
+import koko.task.TaskList;
+import koko.ui.Ui;
+import koko.storage.Storage;
+
 public class EventCommand extends Command {
 
     private EventTask task;
