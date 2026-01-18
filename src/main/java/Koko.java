@@ -10,10 +10,9 @@ public class Koko {
     public Koko(String filePath) {
         this.ui = new Ui();
         this.storage = new Storage(filePath);
+        this.parser = new Parser();
         try {
-            //this.taskList = new TaskList(this.storage.load());
-            this.taskList = new TaskList();
-            this.parser = new Parser(this.taskList);
+            this.taskList = new TaskList(this.storage.load());
         } catch (KokoException e) {
             this.ui.showLoadingError();
             this.taskList = new TaskList();
@@ -28,6 +27,7 @@ public class Koko {
                 String fullCommand = ui.readCommand();
                 Command c = parser.parse(fullCommand);
                 c.execute(taskList, ui, storage);
+                storage.update(taskList);
                 isExit = c.isExit();
             } catch (KokoException e) {
                 ui.showError(e.getMessage());

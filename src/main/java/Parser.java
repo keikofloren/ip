@@ -1,7 +1,5 @@
 public class Parser {
 
-    private TaskList taskList;
-
     enum CommandType {
         BYE,
         TODO,
@@ -12,10 +10,6 @@ public class Parser {
         UNMARK,
         DELETE,
         UNKNOWN
-    }
-
-    public Parser(TaskList taskList) {
-        this.taskList = taskList;
     }
 
     public Command parse(String fullCommand) {

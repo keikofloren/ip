@@ -18,4 +18,9 @@ public class EventTask extends Task {
     public String toString() {
         return "[E]" + super.toString() + " (from: " + startTime + " to: " + endTime + ")";
     }
+
+    @Override
+    public String getFileDescription() {
+        return super.getFileDescription() + " | from " + this.startTime + " to " + this.endTime;
+    }
 }

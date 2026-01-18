@@ -7,6 +7,10 @@ public class TaskList {
         this.tasks = new ArrayList<>();
     }
 
+    public TaskList(ArrayList<Task> tasks) {
+        this.tasks = tasks;
+    }
+
     public void addTask(Task task) {
         this.tasks.add(task);
     }
@@ -23,7 +27,11 @@ public class TaskList {
         return tasks.size();
     }
 
-    private Task getTask(String index) {
+    public Task getTask(int index) {
+        return this.tasks.get(index);
+    }
+
+    public Task getTask(String index) {
         if (index == null || index.isBlank()) {
             throw new InvalidCommandFormatException(
                     "Oi, which task?! (＞﹏＜)\n"

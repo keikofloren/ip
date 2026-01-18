@@ -21,6 +21,10 @@ public class Task {
                 + this.description;
     }
 
+    public String getFileDescription() {
+        return this.description;
+    }
+
     public Task mark() {
         this.isDone = true;
         return this;
@@ -29,5 +33,9 @@ public class Task {
     public Task unmark() {
         this.isDone = false;
         return this;
+    }
+
+    public boolean isDone() {
+        return this.isDone;
     }
 }
