@@ -16,7 +16,7 @@ public class EventTask extends Task {
         if (startTime == null || startTime.isBlank() || endTime == null || endTime.isBlank()) {
             throw new InvalidCommandFormatException(
                     "E-eh?! Your event has no time range… (＠_＠;)\n"
-                            + "Please use: event <koko.task> /from <dd/MM/yyyy HHmm> /to <dd/MM/yyyy HHmm>\n"
+                            + "Please use: event <task> /from <dd/MM/yyyy HHmm> /to <dd/MM/yyyy HHmm>\n"
             );
         }
         try {

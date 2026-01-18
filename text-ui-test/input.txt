@@ -6,6 +6,7 @@ todo CS2109S ps0
 deadline CS2103T ip /by 23/01/2026 2359
 event CS2103T tutorial /from 21/01/2026 1400 /to 21/01/2026 1500
 list
+find CS2103T
 mark
 mark 1
 list

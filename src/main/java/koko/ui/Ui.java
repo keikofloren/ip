@@ -65,7 +65,7 @@ public class Ui {
 
     public void showMarkTask(Task task) {
         System.out.println(
-                "Sugoi. koko.task.Task complete! (≧▽≦)\n"
+                "Sugoi. Task complete! (≧▽≦)\n"
                         + task + "\n"
         );
     }
@@ -79,7 +79,7 @@ public class Ui {
 
     public void showDeleteTask(Task task, TaskList taskList) {
         System.out.println(
-                "Poof! That koko.task has been erased from existence! (∩_∩;)\n"
+                "Poof! That task has been erased from existence! (∩_∩;)\n"
                         + task + "\n"
                         + "Now you have " + taskList.numberOfTasks() + " tasks in the list!\n"
         );
