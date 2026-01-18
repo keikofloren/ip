@@ -27,7 +27,7 @@ Okay! Here is your quest list! ( •̀ᴗ•́ )و
 3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 
 Oi, which task?! (＞﹏＜)
-Please use: mark <task index>!
+Please state a task index!
 
 Sugoi. Task complete! (≧▽≦)
 [T][X] CS2109S ps0
@@ -45,8 +45,8 @@ Okay! Here is your quest list! ( •̀ᴗ•́ )و
 2. [D][X] CS2103T ip (by: Friday 23 Jan)
 3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 
-Ehh?! Which one do I undo?! (＠_＠;)
-Please use: mark <task index>!
+Oi, which task?! (＞﹏＜)
+Please state a task index!
 
 O-okay… back to unfinished mode. (；﹏；)
 [T][ ] CS2109S ps0
@@ -56,8 +56,8 @@ Okay! Here is your quest list! ( •̀ᴗ•́ )و
 2. [D][X] CS2103T ip (by: Friday 23 Jan)
 3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 
-W-wait! Delete WHICH one?! (；ﾟДﾟ)
-Please use: delete <task index>!
+Oi, which task?! (＞﹏＜)
+Please state a task index!
 
 Poof! That task has been erased from existence! (∩_∩;)
 [T][ ] CS2109S ps0

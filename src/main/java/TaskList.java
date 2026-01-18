@@ -23,17 +23,45 @@ public class TaskList {
         return tasks.size();
     }
 
-    public Task markTask(int index) {
-        return this.tasks.get(index - 1).mark();
+    private Task getTask(String index) {
+        if (index == null || index.isBlank()) {
+            throw new InvalidCommandFormatException(
+                    "Oi, which task?! (＞﹏＜)\n"
+                            + "Please state a task index!\n"
+            );
+        }
+        int taskIndex;
+        try {
+            taskIndex = Integer.parseInt(index.trim());
+        } catch (NumberFormatException e) {
+            throw new InvalidCommandFormatException(
+                    "That doesn't look like a number... (＠_＠;)\n"
+                            + "Please state a task index!\n"
+            );
+        }
+        int numTasks = this.numberOfTasks();
+        if (taskIndex < 1 || taskIndex > numTasks) {
+            throw new InvalidCommandInputException(
+                    "Ehh?! That task number doesn't exist! Please use a number from 1 to "
+                            + numTasks + "!\n"
+            );
+        }
+        int i = Integer.parseInt(index);
+        return this.tasks.get(i - 1);
     }
 
-    public Task unmarkTask(int index) {
-        return this.tasks.get(index - 1).unmark();
+    public Task markTask(String index) {
+        return this.getTask(index).mark();
     }
 
-    public Task deleteTask(int index) {
-        Task deletedTask = this.tasks.get(index - 1);
-        this.tasks.remove(index - 1);
+    public Task unmarkTask(String index) {
+        return this.getTask(index).unmark();
+    }
+
+    public Task deleteTask(String index) {
+        Task deletedTask = this.getTask(index);
+        int i = Integer.parseInt(index);
+        this.tasks.remove(i - 1);
         return deletedTask;
     }
 }
