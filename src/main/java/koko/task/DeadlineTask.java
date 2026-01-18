@@ -1,3 +1,7 @@
+package koko.task;
+
+import koko.exception.*;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -6,12 +10,12 @@ public class DeadlineTask extends Task {
 
     private LocalDateTime deadline;
 
-    public DeadlineTask(String description, String deadline) throws InvalidCommandFormatException {
+    public DeadlineTask(String description, String deadline) throws KokoException {
         super(description);
-        if (deadline.isBlank()) {
+        if (deadline == null || deadline.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "Uwaaa! Your deadline task is missing the /by date… (；ω；)\n"
-                        + "Please use: deadline <task> /by <dd/MM/yyyy HHmm>!\n"
+                    "Uwaaa! Your deadline koko.task is missing the /by date… (；ω；)\n"
+                        + "Please use: deadline <koko.task> /by <dd/MM/yyyy HHmm>!\n"
             );
         }
         try {

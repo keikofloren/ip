@@ -1,4 +1,11 @@
-import java.util.Scanner;
+package koko;
+
+import koko.command.Command;
+import koko.exception.KokoException;
+import koko.parser.Parser;
+import koko.storage.Storage;
+import koko.task.TaskList;
+import koko.ui.Ui;
 
 public class Koko {
 

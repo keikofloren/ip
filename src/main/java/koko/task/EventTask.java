@@ -1,3 +1,7 @@
+package koko.task;
+
+import koko.exception.*;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
 import java.time.format.DateTimeFormatter;
@@ -9,10 +13,10 @@ public class EventTask extends Task {
 
     public EventTask(String description, String startTime, String endTime) {
         super(description);
-        if (startTime.isBlank() || endTime.isBlank()) {
+        if (startTime == null || startTime.isBlank() || endTime == null || endTime.isBlank()) {
             throw new InvalidCommandFormatException(
                     "E-eh?! Your event has no time range… (＠_＠;)\n"
-                            + "Please use: event <task> /from <dd/MM/yyyy HHmm> /to <dd/MM/yyyy HHmm>\n"
+                            + "Please use: event <koko.task> /from <dd/MM/yyyy HHmm> /to <dd/MM/yyyy HHmm>\n"
             );
         }
         try {

@@ -1,3 +1,10 @@
+package koko.command;
+
+import koko.task.Task;
+import koko.task.TaskList;
+import koko.ui.Ui;
+import koko.storage.Storage;
+
 public class DeleteCommand extends Command {
 
     private String taskIndex;

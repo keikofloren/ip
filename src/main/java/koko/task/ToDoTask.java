@@ -1,3 +1,5 @@
+package koko.task;
+
 public class ToDoTask extends Task {
 
     public ToDoTask(String description) {

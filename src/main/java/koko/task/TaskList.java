@@ -1,3 +1,8 @@
+package koko.task;
+
+import koko.exception.InvalidCommandFormatException;
+import koko.exception.InvalidCommandInputException;
+
 import java.util.ArrayList;
 
 public class TaskList {
@@ -34,8 +39,8 @@ public class TaskList {
     public Task getTask(String index) {
         if (index == null || index.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "Oi, which task?! (＞﹏＜)\n"
-                            + "Please state a task index!\n"
+                    "Oi, which koko.task?! (＞﹏＜)\n"
+                            + "Please state a koko.task index!\n"
             );
         }
         int taskIndex;
@@ -44,13 +49,13 @@ public class TaskList {
         } catch (NumberFormatException e) {
             throw new InvalidCommandFormatException(
                     "That doesn't look like a number... (＠_＠;)\n"
-                            + "Please state a task index!\n"
+                            + "Please state a koko.task index!\n"
             );
         }
         int numTasks = this.numberOfTasks();
         if (taskIndex < 1 || taskIndex > numTasks) {
             throw new InvalidCommandInputException(
-                    "Ehh?! That task number doesn't exist! Please use a number from 1 to "
+                    "Ehh?! That koko.task number doesn't exist! Please use a number from 1 to "
                             + numTasks + "!\n"
             );
         }

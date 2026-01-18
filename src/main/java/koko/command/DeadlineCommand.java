@@ -1,3 +1,10 @@
+package koko.command;
+
+import koko.task.DeadlineTask;
+import koko.task.TaskList;
+import koko.ui.Ui;
+import koko.storage.Storage;
+
 public class DeadlineCommand extends Command {
 
     private DeadlineTask task;
