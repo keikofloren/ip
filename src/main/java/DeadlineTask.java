@@ -1,24 +1,37 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 public class DeadlineTask extends Task {
 
-    private String deadline;
+    private LocalDateTime deadline;
 
     public DeadlineTask(String description, String deadline) throws InvalidCommandFormatException {
         super(description);
         if (deadline.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "OOPS!!! The deadline of a deadline task cannot be empty.\n"
+                    "Uwaaa! Your deadline task is missing the /by date… (；ω；)\n"
+                        + "Please use: deadline <task> /by <dd/MM/yyyy HHmm>!\n"
             );
         }
-        this.deadline = deadline;
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
+            this.deadline = LocalDateTime.parse(deadline, formatter);
+        } catch (DateTimeParseException e) {
+            throw new WrongDateFormatException("Uwaaa! That date looks impossible… (＠_＠;)\n"
+                    + "Please use: deadline dd/MM/yyyy HHmm!\n");
+        }
     }
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by: " + this.deadline + ")";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy HHmm");
+        return "[D]" + super.toString() + " (by: " + this.deadline.format(formatter) + ")";
     }
 
     @Override
     public String getFileDescription() {
-        return super.getFileDescription() + " | by " + this.deadline;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy HHmm");
+        return super.getFileDescription() + " | by " + this.deadline.format(formatter);
     }
 }

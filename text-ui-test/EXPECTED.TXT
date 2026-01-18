@@ -5,26 +5,26 @@ E-eh?! I don't understand that command... (；ω；)
 
 Nani?! You can't give me an empty task! I need... a description!! (╥﹏╥)
 
-Hold it! Deadline magic requires: deadline <desc> /by <deadline> ( •̀д•́ )
+Hold it! Deadline magic requires: deadline <task> /by <dd/MM/yyyy HHmm> ( •̀д•́ )
 
-Wait wait! Event summoning ritual is: event <desc> /from <start> /to <end> (；ﾟДﾟ)
+Wait wait! Event summoning ritual is: event <task> /from <dd/MM/yyyy HHmm> /to <dd/MM/yyyy HHmm> (；ﾟДﾟ)
 
 Hai!! Mission accepted! (ง •̀_•́)ง
 [T][ ] CS2109S ps0
 Now you have 1 tasks in the list!
 
 Understood. I'll keep an eye on the clock. ( •̀ᴗ•́ )ゞ
-[D][ ] CS2103T ip (by: Friday 23 Jan)
+[D][ ] CS2103T ip (by: 23/1/2026 2359)
 Now you have 2 tasks in the list!
 
 Ooh, a schedule arc begins. (☆_☆)
-[E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
+[E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 Now you have 3 tasks in the list.
 
 Okay! Here is your quest list! ( •̀ᴗ•́ )و
 1. [T][ ] CS2109S ps0
-2. [D][ ] CS2103T ip (by: Friday 23 Jan)
-3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
+2. [D][ ] CS2103T ip (by: 23/1/2026 2359)
+3. [E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 
 Oi, which task?! (＞﹏＜)
 Please state a task index!
@@ -34,16 +34,16 @@ Sugoi. Task complete! (≧▽≦)
 
 Okay! Here is your quest list! ( •̀ᴗ•́ )و
 1. [T][X] CS2109S ps0
-2. [D][ ] CS2103T ip (by: Friday 23 Jan)
-3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
+2. [D][ ] CS2103T ip (by: 23/1/2026 2359)
+3. [E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 
 Sugoi. Task complete! (≧▽≦)
-[D][X] CS2103T ip (by: Friday 23 Jan)
+[D][X] CS2103T ip (by: 23/1/2026 2359)
 
 Okay! Here is your quest list! ( •̀ᴗ•́ )و
 1. [T][X] CS2109S ps0
-2. [D][X] CS2103T ip (by: Friday 23 Jan)
-3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
+2. [D][X] CS2103T ip (by: 23/1/2026 2359)
+3. [E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 
 Oi, which task?! (＞﹏＜)
 Please state a task index!
@@ -53,8 +53,8 @@ O-okay… back to unfinished mode. (；﹏；)
 
 Okay! Here is your quest list! ( •̀ᴗ•́ )و
 1. [T][ ] CS2109S ps0
-2. [D][X] CS2103T ip (by: Friday 23 Jan)
-3. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
+2. [D][X] CS2103T ip (by: 23/1/2026 2359)
+3. [E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 
 Oi, which task?! (＞﹏＜)
 Please state a task index!
@@ -64,8 +64,8 @@ Poof! That task has been erased from existence! (∩_∩;)
 Now you have 2 tasks in the list!
 
 Okay! Here is your quest list! ( •̀ᴗ•́ )و
-1. [D][X] CS2103T ip (by: Friday 23 Jan)
-2. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
+1. [D][X] CS2103T ip (by: 23/1/2026 2359)
+2. [E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 
 Ehh?! That task number doesn't exist! Please use a number from 1 to 2!
 
