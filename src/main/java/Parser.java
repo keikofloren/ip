@@ -62,7 +62,7 @@ public class Parser {
     private Command handleDeadline(String arg) {
         if (arg == null || !arg.contains (" /by ")) {
             throw new InvalidCommandFormatException(
-                    "Hold it! Deadline magic requires: deadline <desc> /by <deadline> ( •̀д•́ )\n"
+                    "Hold it! Deadline magic requires: deadline <task> /by <dd/MM/yyyy HHmm> ( •̀д•́ )\n"
             );
         }
         String[] argArray = arg.split(" /by ");
@@ -75,7 +75,7 @@ public class Parser {
     private Command handleEvent(String arg) {
         if (arg == null || !arg.contains(" /from ") || !arg.contains(" /to ")) {
             throw new InvalidCommandFormatException(
-                    "Wait wait! Event summoning ritual is: event <desc> /from <start> /to <end> (；ﾟДﾟ)\n"
+                    "Wait wait! Event summoning ritual is: event <task> /from <dd/MM/yyyy HHmm> /to <dd/MM/yyyy HHmm> (；ﾟДﾟ)\n"
             );
         }
         String[] argArray =  arg.split(" /from ");

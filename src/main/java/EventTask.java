@@ -1,26 +1,44 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeParseException;
+import java.time.format.DateTimeFormatter;
+
 public class EventTask extends Task {
 
-    private String startTime;
-    private String endTime;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
 
     public EventTask(String description, String startTime, String endTime) {
         super(description);
         if (startTime.isBlank() || endTime.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "OOPS!!! The start/end time of an event task cannot be empty.\n"
+                    "E-eh?! Your event has no time range… (＠_＠;)\n"
+                            + "Please use: event <task> /from <dd/MM/yyyy HHmm> /to <dd/MM/yyyy HHmm>\n"
             );
         }
-        this.startTime = startTime;
-        this.endTime = endTime;
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
+            this.startTime = LocalDateTime.parse(startTime, formatter);
+            this.endTime = LocalDateTime.parse(endTime, formatter);
+        } catch (DateTimeParseException e) {
+            throw new WrongDateFormatException("Uwaaa! That date/time looks impossible… (＠_＠;)\n"
+                    + "Please use dd/MM/yyyy HHmm!\n");
+        }
+
     }
 
     @Override
     public String toString() {
-        return "[E]" + super.toString() + " (from: " + startTime + " to: " + endTime + ")";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
+        return "[E]" + super.toString()
+                + " (from: " + startTime.format(formatter)
+                + " to: " + endTime.format(formatter) + ")";
     }
 
     @Override
     public String getFileDescription() {
-        return super.getFileDescription() + " | from " + this.startTime + " to " + this.endTime;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
+        return super.getFileDescription()
+                + " | from " + this.startTime.format(formatter)
+                + " to " + this.endTime.format(formatter) ;
     }
 }
