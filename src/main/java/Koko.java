@@ -138,7 +138,7 @@ public class Koko {
         taskList.listTasks();
     }
 
-    private static void handleMark(String arg) throws InvalidCommandFormatException{
+    private static void handleMark(String arg) throws KokoException {
         if (arg == null || arg.isBlank()) {
             throw new InvalidCommandFormatException(
                     "Oi, which task?! (＞﹏＜)\n"
@@ -146,6 +146,12 @@ public class Koko {
             );
         }
         int taskIndex = Integer.parseInt(arg);
+        if (taskIndex > taskList.numberOfTasks() || taskIndex < 1) {
+            throw new InvalidCommandInputException(
+                    "Ehh?! That task number doesn't exist! Please use a number from 1 to "
+                            + taskList.numberOfTasks() + "!\n"
+            );
+        }
         Task markedTask = taskList.markTask(taskIndex);
         System.out.println(
                 "Sugoi. Task complete! (≧▽≦)\n"
@@ -153,7 +159,7 @@ public class Koko {
         );
     }
 
-    private static void handleUnmark(String arg) throws InvalidCommandFormatException {
+    private static void handleUnmark(String arg) throws KokoException {
         if (arg == null || arg.isBlank()) {
             throw new InvalidCommandFormatException(
                     "Ehh?! Which one do I undo?! (＠_＠;)\n"
@@ -161,6 +167,12 @@ public class Koko {
             );
         }
         int taskIndex = Integer.parseInt(arg);
+        if (taskIndex > taskList.numberOfTasks() || taskIndex < 1) {
+            throw new InvalidCommandInputException(
+                    "Ehh?! That task number doesn't exist! Please use a number from 1 to "
+                            + taskList.numberOfTasks() + "!\n"
+            );
+        }
         Task unmarkedTask = taskList.unmarkTask(taskIndex);
         System.out.println(
                 "O-okay… back to unfinished mode. (；﹏；)\n"
@@ -168,7 +180,7 @@ public class Koko {
         );
     }
 
-    private static void handleDelete(String arg) throws InvalidCommandFormatException {
+    private static void handleDelete(String arg) throws KokoException {
         if (arg == null || arg.isBlank()) {
             throw new InvalidCommandFormatException(
                     "W-wait! Delete WHICH one?! (；ﾟДﾟ)\n"
@@ -176,6 +188,12 @@ public class Koko {
             );
         }
         int taskIndex = Integer.parseInt(arg);
+        if (taskIndex > taskList.numberOfTasks() || taskIndex < 1) {
+            throw new InvalidCommandInputException(
+                    "Ehh?! That task number doesn't exist! Please use a number from 1 to "
+                            + taskList.numberOfTasks() + "!\n"
+            );
+        }
         Task deletedTask = taskList.deleteTask(taskIndex);
         System.out.println(
                 "Poof! That task has been erased from existence! (∩_∩;)\n"

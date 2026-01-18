@@ -67,5 +67,9 @@ Okay! Here is your quest list! ( •̀ᴗ•́ )و
 1. [D][X] CS2103T ip (by: Friday 23 Jan)
 2. [E][ ] CS2103T tutorial (from: Wednesday 2pm to: 3pm)
 
+Ehh?! That task number doesn't exist! Please use a number from 1 to 2!
+
+Ehh?! That task number doesn't exist! Please use a number from 1 to 2!
+
 Ja ne~! Don’t forget your quests, okay? (｡•̀ᴗ•́｡)
 

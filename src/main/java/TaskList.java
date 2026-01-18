@@ -19,8 +19,8 @@ public class TaskList {
         System.out.println();
     }
 
-    public String numberOfTasks() {
-        return String.valueOf(tasks.size());
+    public int numberOfTasks() {
+        return tasks.size();
     }
 
     public Task markTask(int index) {
