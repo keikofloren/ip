@@ -1,14 +1,21 @@
 package koko.storage;
 
-import koko.task.*;
-import koko.exception.*;
-
-import java.util.ArrayList;
-import java.util.Scanner;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import koko.exception.CreateFileException;
+import koko.exception.FileLoadException;
+import koko.exception.KokoException;
+import koko.exception.WriteFileException;
+import koko.task.DeadlineTask;
+import koko.task.EventTask;
+import koko.task.Task;
+import koko.task.TaskList;
+import koko.task.ToDoTask;
 
 public class Storage {
 
@@ -32,7 +39,7 @@ public class Storage {
         } catch (FileNotFoundException e) {
             throw new FileLoadException(
                     "N-nooo! I couldn't read my memory scroll...\n"
-                    + "Your saved tasks might be hiding or damaged!\n"
+                            + "Your saved tasks might be hiding or damaged!\n"
             );
         }
     }
@@ -48,7 +55,7 @@ public class Storage {
         } catch (IOException e) {
             throw new WriteFileException(
                     "Aaa!! I failed to write to the save crystal!\n"
-                    + "Your tasks are safe for now, but I couldn't save them!\n"
+                            + "Your tasks are safe for now, but I couldn't save them!\n"
             );
         }
 
@@ -59,7 +66,7 @@ public class Storage {
         String type = lineArray[0];
         boolean isDone = lineArray[1].equals("1");
         String description = lineArray[2];
-        Task task= null;
+        Task task = null;
         if (type.equals("T")) {
             task = new ToDoTask(description);
         } else if (type.equals("D")) {

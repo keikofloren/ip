@@ -25,7 +25,9 @@ public class Task {
                 + this.description;
     }
 
-    public String getDescription() { return this.description; }
+    public String getDescription() {
+        return this.description;
+    }
 
     public String getFileDescription() {
         return this.description;

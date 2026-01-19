@@ -1,8 +1,12 @@
 package koko.ui;
 
-import koko.task.*;
-
 import java.util.Scanner;
+
+import koko.task.DeadlineTask;
+import koko.task.EventTask;
+import koko.task.Task;
+import koko.task.TaskList;
+import koko.task.ToDoTask;
 
 public class Ui {
 

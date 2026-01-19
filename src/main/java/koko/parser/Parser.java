@@ -1,23 +1,22 @@
 package koko.parser;
 
-import koko.command.*;
-import koko.task.*;
+import koko.command.Command;
+import koko.command.DeadlineCommand;
+import koko.command.DeleteCommand;
+import koko.command.EventCommand;
+import koko.command.ExitCommand;
+import koko.command.FindCommand;
+import koko.command.ListCommand;
+import koko.command.MarkCommand;
+import koko.command.ToDoCommand;
+import koko.command.UnmarkCommand;
+import koko.command.UnknownCommand;
 import koko.exception.InvalidCommandFormatException;
+import koko.task.DeadlineTask;
+import koko.task.EventTask;
+import koko.task.ToDoTask;
 
 public class Parser {
-
-    enum CommandType {
-        BYE,
-        TODO,
-        DEADLINE,
-        EVENT,
-        LIST,
-        MARK,
-        UNMARK,
-        DELETE,
-        FIND,
-        UNKNOWN
-    }
 
     public Command parse(String fullCommand) {
         String[] parsedInput = parseInput(fullCommand);
@@ -29,26 +28,16 @@ public class Parser {
         }
         String arg = parsedInput[1];
         switch (commandType) {
-            case BYE:
-                return handleBye();
-            case TODO:
-                return handleToDo(arg);
-            case DEADLINE:
-                return handleDeadline(arg);
-            case EVENT:
-                return handleEvent(arg);
-            case LIST:
-                return handleList();
-            case MARK:
-                return handleMark(arg);
-            case UNMARK:
-                return handleUnmark(arg);
-            case DELETE:
-                return handleDelete(arg);
-            case FIND:
-                return handleFind(arg);
-            default:
-                return new UnknownCommand();
+        case BYE: return handleBye();
+        case TODO: return handleToDo(arg);
+        case DEADLINE: return handleDeadline(arg);
+        case EVENT: return handleEvent(arg);
+        case LIST: return handleList();
+        case MARK: return handleMark(arg);
+        case UNMARK: return handleUnmark(arg);
+        case DELETE: return handleDelete(arg);
+        case FIND: return handleFind(arg);
+        default: return new UnknownCommand();
         }
     }
 
@@ -69,7 +58,7 @@ public class Parser {
     }
 
     private Command handleDeadline(String arg) {
-        if (arg == null || !arg.contains (" /by ")) {
+        if (arg == null || !arg.contains(" /by ")) {
             throw new InvalidCommandFormatException(
                     "Hold it! Deadline magic requires: deadline <task> /by <dd/MM/yyyy HHmm>\n"
             );
@@ -87,7 +76,7 @@ public class Parser {
                     "Wait wait! Event summoning ritual is: event <task> /from <dd/MM/yyyy HHmm> /to <dd/MM/yyyy HHmm>\n"
             );
         }
-        String[] argArray =  arg.split(" /from ");
+        String[] argArray = arg.split(" /from ");
         String taskDescription = argArray[0];
         String[] argArray2 = argArray[1].split(" /to ");
         String startTime = argArray2[0];
@@ -114,5 +103,18 @@ public class Parser {
 
     private Command handleFind(String arg) {
         return new FindCommand(arg);
+    }
+
+    enum CommandType {
+        BYE,
+        TODO,
+        DEADLINE,
+        EVENT,
+        LIST,
+        MARK,
+        UNMARK,
+        DELETE,
+        FIND,
+        UNKNOWN
     }
 }

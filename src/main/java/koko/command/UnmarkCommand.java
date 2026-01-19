@@ -1,9 +1,9 @@
 package koko.command;
 
+import koko.storage.Storage;
 import koko.task.Task;
 import koko.task.TaskList;
 import koko.ui.Ui;
-import koko.storage.Storage;
 
 public class UnmarkCommand extends Command {
 

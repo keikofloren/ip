@@ -1,11 +1,13 @@
 package koko.task;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-import koko.exception.*;
+import org.junit.jupiter.api.Test;
+
+import koko.exception.InvalidCommandFormatException;
+import koko.exception.KokoException;
+import koko.exception.WrongDateFormatException;
 import koko.ui.Ui;
 
 public class DeadlineTaskTest {
@@ -19,7 +21,7 @@ public class DeadlineTaskTest {
     }
 
     @Test
-    void instantiateTask_nullDateTime_throws_InvalidCommandFormatException() throws InvalidCommandFormatException {
+    void instantiateTask_nullDateTime_throwsInvalidCommandFormatException() throws InvalidCommandFormatException {
         Ui ui = new Ui();
         try {
             String description = "CS2103T";
@@ -32,7 +34,7 @@ public class DeadlineTaskTest {
     }
 
     @Test
-    void instantiateTask_invalidDateTime_throws_WrongDateFormatException() throws WrongDateFormatException {
+    void instantiateTask_invalidDateTime_throwsWrongDateFormatException() throws WrongDateFormatException {
         Ui ui = new Ui();
         try {
             String description = "CS2103T";

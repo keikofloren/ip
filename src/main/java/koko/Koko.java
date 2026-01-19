@@ -26,6 +26,10 @@ public class Koko {
         }
     }
 
+    public static void main(String[] args) {
+        new Koko("data/tasks.txt").run();
+    }
+
     public void run() {
         ui.showWelcome();
         boolean isExit = false;
@@ -40,9 +44,5 @@ public class Koko {
                 ui.showError(e.getMessage());
             }
         }
-    }
-
-    public static void main(String[] args) {
-        new Koko("data/tasks.txt").run();
     }
 }

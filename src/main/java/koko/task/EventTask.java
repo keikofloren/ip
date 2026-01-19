@@ -1,10 +1,12 @@
 package koko.task;
 
-import koko.exception.*;
-
+import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
-import java.time.format.DateTimeFormatter;
+
+
+import koko.exception.InvalidCommandFormatException;
+import koko.exception.WrongDateFormatException;
 
 public class EventTask extends Task {
 
@@ -43,6 +45,6 @@ public class EventTask extends Task {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
         return super.getFileDescription()
                 + " | from " + this.startTime.format(formatter)
-                + " to " + this.endTime.format(formatter) ;
+                + " to " + this.endTime.format(formatter);
     }
 }
