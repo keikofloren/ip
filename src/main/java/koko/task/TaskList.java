@@ -33,7 +33,14 @@ public class TaskList {
     }
 
     public Task getTask(int index) {
-        return this.tasks.get(index);
+        int numTasks = this.numberOfTasks();
+        if (index < 1 || index > numTasks) {
+            throw new InvalidCommandInputException(
+                    "Ehh?! That task number doesn't exist! Please use a number from 1 to "
+                            + numTasks + "!\n"
+            );
+        }
+        return this.tasks.get(index - 1);
     }
 
     public Task getTask(String index) {
