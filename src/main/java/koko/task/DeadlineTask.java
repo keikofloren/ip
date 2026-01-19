@@ -8,10 +8,21 @@ import koko.exception.InvalidCommandFormatException;
 import koko.exception.KokoException;
 import koko.exception.WrongDateFormatException;
 
+/**
+ * Represents a task that must be completed by a specific deadline.
+ */
 public class DeadlineTask extends Task {
 
+    /** Deadline date and time of the task. */
     private LocalDateTime deadline;
 
+    /**
+     * Creates a DeadlineTask with the specified description and deadline string.
+     *
+     * @param description Description of the task.
+     * @param deadline Deadline date and time in the format dd/MM/yyyy HHmm.
+     * @throws KokoException If the deadline is missing or cannot be parsed.
+     */
     public DeadlineTask(String description, String deadline) throws KokoException {
         super(description);
         if (deadline == null || deadline.isBlank()) {
@@ -29,12 +40,22 @@ public class DeadlineTask extends Task {
         }
     }
 
+    /**
+     * Returns the task formatted for display, including its deadline.
+     *
+     * @return String representation of the deadline task.
+     */
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy HHmm");
         return "[D]" + super.toString() + " (by: " + this.deadline.format(formatter) + ")";
     }
 
+    /**
+     * Returns the task formatted for file storage.
+     *
+     * @return String representation of the task in storage format.
+     */
     @Override
     public String getFileDescription() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy HHmm");

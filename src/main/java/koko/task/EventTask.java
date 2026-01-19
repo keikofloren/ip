@@ -7,11 +7,26 @@ import java.time.format.DateTimeParseException;
 import koko.exception.InvalidCommandFormatException;
 import koko.exception.WrongDateFormatException;
 
+/**
+ * Represents a task that takes place over a specific time period.
+ */
 public class EventTask extends Task {
 
+    /** Start date and time of the event. */
     private LocalDateTime startTime;
+
+    /** End date and time of the event. */
     private LocalDateTime endTime;
 
+    /**
+     * Creates an EventTask with the specified description, start time, and end time.
+     *
+     * @param description Description of the task.
+     * @param startTime Start date and time in the format dd/MM/yyyy HHmm.
+     * @param endTime End date and time in the format dd/MM/yyyy HHmm.
+     * @throws InvalidCommandFormatException If the start time or end time is missing.
+     * @throws WrongDateFormatException If the start time or end time cannot be parsed.
+     */
     public EventTask(String description, String startTime, String endTime) {
         super(description);
         if (startTime == null || startTime.isBlank() || endTime == null || endTime.isBlank()) {
@@ -31,6 +46,11 @@ public class EventTask extends Task {
 
     }
 
+    /**
+     * Returns the task formatted for display, including its start and end time.
+     *
+     * @return String representation of the event task.
+     */
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
@@ -39,6 +59,11 @@ public class EventTask extends Task {
                 + " to: " + endTime.format(formatter) + ")";
     }
 
+    /**
+     * Returns the task formatted for file storage.
+     *
+     * @return String representation of the task in storage format.
+     */
     @Override
     public String getFileDescription() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
