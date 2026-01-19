@@ -31,7 +31,7 @@ public class Storage {
             return tasks;
         } catch (FileNotFoundException e) {
             throw new FileLoadException(
-                    "N-nooo! I couldn't read my memory scroll… (╥﹏╥)\n"
+                    "N-nooo! I couldn't read my memory scroll...\n"
                     + "Your saved tasks might be hiding or damaged!\n"
             );
         }
@@ -47,7 +47,7 @@ public class Storage {
             fw.close();
         } catch (IOException e) {
             throw new WriteFileException(
-                    "Aaa!! I failed to write to the save crystal! (；ﾟДﾟ)\n"
+                    "Aaa!! I failed to write to the save crystal!\n"
                     + "Your tasks are safe for now, but I couldn't save them!\n"
             );
         }
@@ -103,7 +103,7 @@ public class Storage {
             }
         } catch (IOException e) {
             throw new CreateFileException(
-                    "Uwaaa! I tried to create the save cave but it wouldn’t open… (；ω；)\n"
+                    "Uwaaa! I tried to create the save cave but it wouldn’t open...\n"
             );
         }
     }

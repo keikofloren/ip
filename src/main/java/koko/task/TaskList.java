@@ -21,7 +21,7 @@ public class TaskList {
     }
 
     public void listTasks() {
-        System.out.println("Okay! Here is your quest list! ( •̀ᴗ•́ )و");
+        System.out.println("Okay! Here is your quest list!");
         for (int i = 0; i < tasks.toArray().length; i++) {
             System.out.println((i + 1) + ". " + tasks.get(i).toString());
         }
@@ -34,19 +34,19 @@ public class TaskList {
 
     public Task getTask(int index) {
         int numTasks = this.numberOfTasks();
-        if (index < 1 || index > numTasks) {
+        if (index < 0 || index > numTasks) {
             throw new InvalidCommandInputException(
                     "Ehh?! That task number doesn't exist! Please use a number from 1 to "
                             + numTasks + "!\n"
             );
         }
-        return this.tasks.get(index - 1);
+        return this.tasks.get(index);
     }
 
     public Task getTask(String index) {
         if (index == null || index.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "Oi, which task?! (＞﹏＜)\n"
+                    "Oi, which task?!\n"
                             + "Please state a task index!\n"
             );
         }
@@ -55,7 +55,7 @@ public class TaskList {
             taskIndex = Integer.parseInt(index.trim());
         } catch (NumberFormatException e) {
             throw new InvalidCommandFormatException(
-                    "That doesn't look like a number... (＠_＠;)\n"
+                    "That doesn't look like a number...\n"
                             + "Please state a task index!\n"
             );
         }
@@ -87,7 +87,7 @@ public class TaskList {
 
     public void findTask(String keyword) {
         int taskCount = 1;
-        System.out.println("Hai hai~! Here are the matching quests in your list! ( •̀ᴗ•́ )و");
+        System.out.println("Hai hai~! Here are the matching quests in your list!");
         for (int i = 0; i < this.numberOfTasks(); i++) {
             Task task = this.getTask(i);
             if (task.getDescription().contains(keyword)) {

@@ -10,7 +10,7 @@ public class Task {
     public Task(String description) throws InvalidCommandFormatException {
         if (description == null || description.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "Nani?! You can't give me an empty task! I need... a description!! (╥﹏╥)\n"
+                    "Nani?! You can't give me an empty task! I need... a description!!\n"
             );
         }
         this.description = description;

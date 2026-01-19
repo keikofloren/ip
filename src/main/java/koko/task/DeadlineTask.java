@@ -14,7 +14,7 @@ public class DeadlineTask extends Task {
         super(description);
         if (deadline == null || deadline.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "Uwaaa! Your deadline task is missing the /by date… (；ω；)\n"
+                    "Uwaaa! Your deadline task is missing the /by date…\n"
                         + "Please use: deadline <task> /by <dd/MM/yyyy HHmm>!\n"
             );
         }
@@ -22,7 +22,7 @@ public class DeadlineTask extends Task {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
             this.deadline = LocalDateTime.parse(deadline, formatter);
         } catch (DateTimeParseException e) {
-            throw new WrongDateFormatException("Uwaaa! That date looks impossible… (＠_＠;)\n"
+            throw new WrongDateFormatException("Uwaaa! That date looks impossible…\n"
                     + "Please use: deadline dd/MM/yyyy HHmm!\n");
         }
     }

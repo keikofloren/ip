@@ -15,7 +15,7 @@ public class EventTask extends Task {
         super(description);
         if (startTime == null || startTime.isBlank() || endTime == null || endTime.isBlank()) {
             throw new InvalidCommandFormatException(
-                    "E-eh?! Your event has no time range… (＠_＠;)\n"
+                    "E-eh?! Your event has no time range...\n"
                             + "Please use: event <task> /from <dd/MM/yyyy HHmm> /to <dd/MM/yyyy HHmm>\n"
             );
         }
@@ -24,7 +24,7 @@ public class EventTask extends Task {
             this.startTime = LocalDateTime.parse(startTime, formatter);
             this.endTime = LocalDateTime.parse(endTime, formatter);
         } catch (DateTimeParseException e) {
-            throw new WrongDateFormatException("Uwaaa! That date/time looks impossible… (＠_＠;)\n"
+            throw new WrongDateFormatException("Uwaaa! That date/time looks impossible...\n"
                     + "Please use dd/MM/yyyy HHmm!\n");
         }
 

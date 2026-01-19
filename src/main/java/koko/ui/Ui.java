@@ -18,8 +18,8 @@ public class Ui {
 
     public void showWelcome() {
         System.out.println(
-                "Konnichiwa!! I’m koko.Koko (≧▽≦)\n"
-                        + "What can I do for you today senpai? ( •̀ᴗ•́ )و\n"
+                "Konnichiwa!! I'm Koko\n"
+                        + "What can I do for you today senpai?\n"
         );
     }
 
@@ -32,16 +32,16 @@ public class Ui {
     }
 
     public void showCommandNotFound() {
-        System.out.println("E-eh?! I don't understand that koko.command... (；ω；)\n");
+        System.out.println("E-eh?! I don't understand that command...\n");
     }
 
     public void showExit() {
-        System.out.println("Ja ne~! Don’t forget your quests, okay? (｡•̀ᴗ•́｡)\n");
+        System.out.println("Ja ne~! Don't forget your quests, okay?\n");
     }
 
     public void showAddTodoTask(ToDoTask task, TaskList taskList) {
         System.out.println(
-                "Hai!! Mission accepted! (ง •̀_•́)ง\n"
+                "Hai!! Mission accepted!\n"
                         + task + "\n"
                         + "Now you have " + taskList.numberOfTasks() + " tasks in the list!\n"
         );
@@ -49,7 +49,7 @@ public class Ui {
 
     public void showAddDeadlineTask(DeadlineTask task, TaskList taskList) {
         System.out.println(
-                "Understood. I'll keep an eye on the clock. ( •̀ᴗ•́ )ゞ\n"
+                "Understood. I'll keep an eye on the clock.\n"
                         + task + "\n"
                         + "Now you have " + taskList.numberOfTasks() + " tasks in the list!\n"
         );
@@ -57,7 +57,7 @@ public class Ui {
 
     public void showAddEventTask(EventTask task, TaskList taskList) {
         System.out.println(
-                "Ooh, a schedule arc begins. (☆_☆)\n"
+                "Ooh, a schedule arc begins.\n"
                         + task + "\n"
                         + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n"
         );
@@ -65,21 +65,21 @@ public class Ui {
 
     public void showMarkTask(Task task) {
         System.out.println(
-                "Sugoi. Task complete! (≧▽≦)\n"
+                "Sugoi. Task complete!\n"
                         + task + "\n"
         );
     }
 
     public void showUnmarkTask(Task task) {
         System.out.println(
-                "O-okay… back to unfinished mode. (；﹏；)\n"
+                "O-okay... back to unfinished mode.\n"
                         + task + "\n"
         );
     }
 
     public void showDeleteTask(Task task, TaskList taskList) {
         System.out.println(
-                "Poof! That task has been erased from existence! (∩_∩;)\n"
+                "Poof! That task has been erased from existence!\n"
                         + task + "\n"
                         + "Now you have " + taskList.numberOfTasks() + " tasks in the list!\n"
         );

@@ -1,73 +1,73 @@
-Konnichiwa!! I’m koko.Koko (≧▽≦)
-What can I do for you today senpai? ( •̀ᴗ•́ )و
+Konnichiwa!! I'm Koko
+What can I do for you today senpai?
 
-E-eh?! I don't understand that koko.command... (；ω；)
+E-eh?! I don't understand that command...
 
-Nani?! You can't give me an empty task! I need... a description!! (╥﹏╥)
+Nani?! You can't give me an empty task! I need... a description!!
 
-Hold it! Deadline magic requires: deadline <task> /by <dd/MM/yyyy HHmm> ( •̀д•́ )
+Hold it! Deadline magic requires: deadline <task> /by <dd/MM/yyyy HHmm>
 
-Wait wait! Event summoning ritual is: event <task> /from <dd/MM/yyyy HHmm> /to <dd/MM/yyyy HHmm> (；ﾟДﾟ)
+Wait wait! Event summoning ritual is: event <task> /from <dd/MM/yyyy HHmm> /to <dd/MM/yyyy HHmm>
 
-Hai!! Mission accepted! (ง •̀_•́)ง
+Hai!! Mission accepted!
 [T][ ] CS2109S ps0
 Now you have 1 tasks in the list!
 
-Understood. I'll keep an eye on the clock. ( •̀ᴗ•́ )ゞ
+Understood. I'll keep an eye on the clock.
 [D][ ] CS2103T ip (by: 23/1/2026 2359)
 Now you have 2 tasks in the list!
 
-Ooh, a schedule arc begins. (☆_☆)
+Ooh, a schedule arc begins.
 [E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 Now you have 3 tasks in the list.
 
-Okay! Here is your quest list! ( •̀ᴗ•́ )و
+Okay! Here is your quest list!
 1. [T][ ] CS2109S ps0
 2. [D][ ] CS2103T ip (by: 23/1/2026 2359)
 3. [E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 
-Hai hai~! Here are the matching quests in your list! ( •̀ᴗ•́ )و
+Hai hai~! Here are the matching quests in your list!
 1. [D][ ] CS2103T ip (by: 23/1/2026 2359)
 2. [E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 
-Oi, which task?! (＞﹏＜)
+Oi, which task?!
 Please state a task index!
 
-Sugoi. Task complete! (≧▽≦)
+Sugoi. Task complete!
 [T][X] CS2109S ps0
 
-Okay! Here is your quest list! ( •̀ᴗ•́ )و
+Okay! Here is your quest list!
 1. [T][X] CS2109S ps0
 2. [D][ ] CS2103T ip (by: 23/1/2026 2359)
 3. [E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 
-Sugoi. Task complete! (≧▽≦)
+Sugoi. Task complete!
 [D][X] CS2103T ip (by: 23/1/2026 2359)
 
-Okay! Here is your quest list! ( •̀ᴗ•́ )و
+Okay! Here is your quest list!
 1. [T][X] CS2109S ps0
 2. [D][X] CS2103T ip (by: 23/1/2026 2359)
 3. [E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 
-Oi, which task?! (＞﹏＜)
+Oi, which task?!
 Please state a task index!
 
-O-okay… back to unfinished mode. (；﹏；)
+O-okay... back to unfinished mode.
 [T][ ] CS2109S ps0
 
-Okay! Here is your quest list! ( •̀ᴗ•́ )و
+Okay! Here is your quest list!
 1. [T][ ] CS2109S ps0
 2. [D][X] CS2103T ip (by: 23/1/2026 2359)
 3. [E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 
-Oi, which task?! (＞﹏＜)
+Oi, which task?!
 Please state a task index!
 
-Poof! That task has been erased from existence! (∩_∩;)
+Poof! That task has been erased from existence!
 [T][ ] CS2109S ps0
 Now you have 2 tasks in the list!
 
-Okay! Here is your quest list! ( •̀ᴗ•́ )و
+Okay! Here is your quest list!
 1. [D][X] CS2103T ip (by: 23/1/2026 2359)
 2. [E][ ] CS2103T tutorial (from: 21/01/2026 1400 to: 21/01/2026 1500)
 
@@ -75,5 +75,5 @@ Ehh?! That task number doesn't exist! Please use a number from 1 to 2!
 
 Ehh?! That task number doesn't exist! Please use a number from 1 to 2!
 
-Ja ne~! Don’t forget your quests, okay? (｡•̀ᴗ•́｡)
+Ja ne~! Don't forget your quests, okay?
 
