@@ -47,7 +47,9 @@ public class Task {
      *
      * @return Description of the task.
      */
-    public String getDescription() { return this.description; }
+    public String getDescription() {
+        return this.description;
+    }
 
     /**
      * Returns the task formatted for file storage.

@@ -23,6 +23,9 @@ public class Ui {
         this.sc = new Scanner(System.in);
     }
 
+    /**
+     * Displays the welcome message to the user.
+     */
     public void showWelcome() {
         System.out.println(
                 "Konnichiwa!! I'm Koko\n"

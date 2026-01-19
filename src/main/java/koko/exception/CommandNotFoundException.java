@@ -10,5 +10,7 @@ public class CommandNotFoundException extends KokoException {
      *
      * @param message Error message describing the invalid command.
      */
-    public CommandNotFoundException(String message) { super(message); }
+    public CommandNotFoundException(String message) {
+        super(message);
+    }
 }
