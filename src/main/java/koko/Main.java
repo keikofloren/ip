@@ -16,7 +16,13 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+/**
+ * The main JavaFX application class for Koko.
+ * This class loads the GUI layout from FXML and starts the application window.
+ */
 public class Main extends Application {
+
+    private static final String DEFAULT_FILE_PATH = "data/tasks.txt";
 
     private ScrollPane scrollPane;
     private VBox dialogContainer;
@@ -24,12 +30,16 @@ public class Main extends Application {
     private Button sendButton;
     private Scene scene;
 
-    private static final String DEFAULT_FILE_PATH = "data/tasks.txt";
-
     private Image userImage = new Image(this.getClass().getResourceAsStream("/images/DaUser.jpg"));
     private Image kokoImage = new Image(this.getClass().getResourceAsStream("/images/DaKoko.jpg"));
     private Koko koko = new Koko(DEFAULT_FILE_PATH);
 
+    /**
+     * Starts the JavaFX application by loading the main window layout from FXML and
+     * displaying it on the stage.
+     *
+     * @param stage The stage for this application.
+     */
     @Override
     public void start(Stage stage) {
         try {

@@ -22,11 +22,12 @@ public class FindCommand extends Command {
     }
 
     /**
-     * Searches the task list for tasks that contain the keyword.
+     * Executes the command using the provided task list, user interface, and storage.
      *
      * @param taskList Task list containing all current tasks.
      * @param ui User interface used for displaying messages to the user.
-     * @param storage Storage used for saving task data.
+     * @param storage Storage used for loading and saving task data.
+     * @return A response message to be shown to the user.
      */
     @Override
     public String execute(TaskList taskList, Ui ui, Storage storage) {

@@ -17,6 +17,7 @@ public abstract class Command {
      * @param taskList Task list containing all current tasks.
      * @param ui User interface used for displaying messages to the user.
      * @param storage Storage used for loading and saving task data.
+     * @return A response message to be shown to the user.
      * @throws KokoException If an error occurs while executing the command.
      */
     public abstract String execute(TaskList taskList, Ui ui, Storage storage) throws KokoException;

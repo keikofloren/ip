@@ -17,7 +17,9 @@ public class Ui {
     private Scanner sc;
 
     /**
-     * Creates a Ui instance that reads commands from standard input.
+     * Returns the welcome message shown when the application starts.
+     *
+     * @return The welcome message.
      */
     public Ui() {
         this.sc = new Scanner(System.in);
@@ -32,33 +34,39 @@ public class Ui {
     }
 
     /**
-     * Displays the specified error message to the user.
+     * Returns an error message to be shown to the user.
      *
-     * @param message Error message to display.
+     * @param message The error message.
+     * @return The error message.
      */
     public String showError(String message) {
         return message;
     }
 
     /**
-     * Displays a message indicating the command was not recognised.
+     * Returns a message indicating that the entered command was not recognised.
+     *
+     * @return The command not found message.
      */
     public String showCommandNotFound() {
         return "E-eh?! I don't understand that command...\n";
     }
 
     /**
-     * Displays the exit message to the user.
+     * Returns the exit message shown when the application is about to close.
+     *
+     * @return The exit message.
      */
     public String showExit() {
         return "Ja ne~! Don't forget your quests, okay?\n";
     }
 
     /**
-     * Displays a confirmation message after adding a to-do task.
+     * Returns a confirmation message after adding a to-do task.
      *
-     * @param task To-do task that was added.
-     * @param taskList Task list containing all current tasks.
+     * @param task The to-do task that was added.
+     * @param taskList The updated task list.
+     * @return The confirmation message.
      */
     public String showAddTodoTask(ToDoTask task, TaskList taskList) {
         return "Hai!! Mission accepted!\n"
@@ -67,10 +75,11 @@ public class Ui {
     }
 
     /**
-     * Displays a confirmation message after adding a deadline task.
+     * Returns a confirmation message after adding a deadline task.
      *
-     * @param task Deadline task that was added.
-     * @param taskList Task list containing all current tasks.
+     * @param task The deadline task that was added.
+     * @param taskList The updated task list.
+     * @return The confirmation message.
      */
     public String showAddDeadlineTask(DeadlineTask task, TaskList taskList) {
         return "Understood. I'll keep an eye on the clock.\n"
@@ -79,31 +88,34 @@ public class Ui {
     }
 
     /**
-     * Displays a confirmation message after adding an event task.
+     * Returns a confirmation message after adding an event task.
      *
-     * @param task Event task that was added.
-     * @param taskList Task list containing all current tasks.
+     * @param task The event task that was added.
+     * @param taskList The updated task list.
+     * @return The confirmation message.
      */
     public String showAddEventTask(EventTask task, TaskList taskList) {
         return "Ooh, a schedule arc begins.\n"
-                        + task + "\n"
-                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n";
+                    + task + "\n"
+                    + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n";
     }
 
     /**
-     * Displays a confirmation message after marking a task as completed.
+     * Returns a confirmation message after marking a task as completed.
      *
-     * @param task Task that was marked as completed.
+     * @param task The task that was marked as completed.
+     * @return The confirmation message.
      */
     public String showMarkTask(Task task) {
-       return "Sugoi. Task complete!\n"
-                        + task + "\n";
+        return "Sugoi. Task complete!\n"
+                + task + "\n";
     }
 
     /**
-     * Displays a confirmation message after unmarking a task.
+     * Returns a confirmation message after unmarking a task.
      *
-     * @param task Task that was unmarked.
+     * @param task The task that was unmarked.
+     * @return The confirmation message.
      */
     public String showUnmarkTask(Task task) {
         return "O-okay... back to unfinished mode.\n"
@@ -111,10 +123,11 @@ public class Ui {
     }
 
     /**
-     * Displays a confirmation message after deleting a task.
+     * Returns a confirmation message after deleting a task.
      *
-     * @param task Task that was deleted.
-     * @param taskList Task list containing all current tasks.
+     * @param task The task that was deleted.
+     * @param taskList The updated task list.
+     * @return The confirmation message.
      */
     public String showDeleteTask(Task task, TaskList taskList) {
         return "Poof! That task has been erased from existence!\n"
