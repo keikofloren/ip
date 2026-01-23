@@ -17,7 +17,7 @@ public class UnknownCommand extends Command {
      * @param storage Storage used for saving task data.
      */
     @Override
-    public void execute(TaskList taskList, Ui ui, Storage storage) {
-        ui.showCommandNotFound();
+    public String execute(TaskList taskList, Ui ui, Storage storage) {
+        return ui.showCommandNotFound();
     }
 }

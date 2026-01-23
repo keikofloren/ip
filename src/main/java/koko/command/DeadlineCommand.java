@@ -30,8 +30,8 @@ public class DeadlineCommand extends Command {
      * @param storage Storage used for loading and saving task data.
      */
     @Override
-    public void execute(TaskList taskList, Ui ui, Storage storage) {
+    public String execute(TaskList taskList, Ui ui, Storage storage) {
         taskList.addTask(this.task);
-        ui.showAddDeadlineTask(this.task, taskList);
+        return ui.showAddDeadlineTask(this.task, taskList);
     }
 }

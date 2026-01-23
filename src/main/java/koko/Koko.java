@@ -33,6 +33,8 @@ public class Koko {
      */
     private Parser parser;
 
+    private boolean isExit;
+
     /**
      * Creates a Koko instance that loads tasks from the specified file path.
      *
@@ -50,31 +52,28 @@ public class Koko {
         }
     }
 
-    /**
-     * Starts the application using the default storage file path.
-     *
-     * @param args Command-line arguments, which are not used.
-     */
-    public static void main(String[] args) {
-        new Koko("data/tasks.txt").run();
+    public String showWelcome() {
+        return ui.showWelcome();
+    }
+
+    public boolean isExit() {
+        return isExit;
     }
 
     /**
-     * Runs the main command loop of the application until an exit command is received.
+     * Generates a response for the user's chat message.
      */
-    public void run() {
-        ui.showWelcome();
-        boolean isExit = false;
-        while (!isExit) {
-            try {
-                String fullCommand = ui.readCommand();
-                Command c = parser.parse(fullCommand);
-                c.execute(taskList, ui, storage);
-                storage.update(taskList);
-                isExit = c.isExit();
-            } catch (KokoException e) {
-                ui.showError(e.getMessage());
+    public String getResponse(String input) throws KokoException {
+        try {
+            Command c = parser.parse(input);
+            String response = c.execute(taskList, ui, storage);
+            storage.update(taskList);
+            if (c.isExit()) {
+                isExit = true;
             }
+            return response;
+        } catch (KokoException e) {
+            return ui.showError(e.getMessage());
         }
     }
 }

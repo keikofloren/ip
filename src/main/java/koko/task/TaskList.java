@@ -41,12 +41,12 @@ public class TaskList {
     /**
      * Prints all tasks in the task list.
      */
-    public void listTasks() {
-        System.out.println("Okay! Here is your quest list!");
+    public String listTasks() {
+        String message = "Okay! Here is your quest list!";
         for (int i = 0; i < tasks.toArray().length; i++) {
-            System.out.println((i + 1) + ". " + tasks.get(i).toString());
+            message += "\n" + (i + 1) + ". " + tasks.get(i).toString();
         }
-        System.out.println();
+        return message;
     }
 
     /**
@@ -149,16 +149,16 @@ public class TaskList {
      *
      * @param keyword Keyword to search for in task descriptions.
      */
-    public void findTask(String keyword) {
+    public String findTask(String keyword) {
         int taskCount = 1;
-        System.out.println("Hai hai~! Here are the matching quests in your list!");
+        String message = "Hai hai~! Here are the matching quests in your list!";
         for (int i = 0; i < this.numberOfTasks(); i++) {
             Task task = this.getTask(i);
             if (task.getDescription().contains(keyword)) {
-                System.out.println(taskCount + ". " + task);
+                message += "\n" + taskCount + ". " + task;
                 taskCount++;
             }
         }
-        System.out.println();
+        return message;
     }
 }

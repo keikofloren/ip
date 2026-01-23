@@ -19,7 +19,7 @@ public abstract class Command {
      * @param storage Storage used for loading and saving task data.
      * @throws KokoException If an error occurs while executing the command.
      */
-    public abstract void execute(TaskList taskList, Ui ui, Storage storage) throws KokoException;
+    public abstract String execute(TaskList taskList, Ui ui, Storage storage) throws KokoException;
 
     /**
      * Returns whether this command should cause the application to exit.

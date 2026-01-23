@@ -30,8 +30,8 @@ public class ToDoCommand extends Command {
      * @param storage Storage used for saving task data.
      */
     @Override
-    public void execute(TaskList taskList, Ui ui, Storage storage) {
+    public String execute(TaskList taskList, Ui ui, Storage storage) {
         taskList.addTask(this.task);
-        ui.showAddTodoTask(this.task, taskList);
+        return ui.showAddTodoTask(this.task, taskList);
     }
 }
