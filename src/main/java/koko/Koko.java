@@ -41,6 +41,7 @@ public class Koko {
      * @param filePath File path used for saving and loading tasks.
      */
     public Koko(String filePath) {
+        assert filePath != null : "filePath should not be null";
         this.ui = new Ui();
         this.storage = new Storage(filePath);
         this.parser = new Parser();
@@ -50,6 +51,11 @@ public class Koko {
             this.ui.showError(e.getMessage());
             this.taskList = new TaskList();
         }
+        assert ui != null : "Ui should not be null";
+        assert storage != null : "Storage should not be null";
+        assert parser != null : "Parser should not be null";
+        assert taskList != null : "TaskList should not be null";
+
     }
 
     public String showWelcome() {
