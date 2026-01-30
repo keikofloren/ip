@@ -30,6 +30,7 @@ public class Parser {
      */
     public Command parse(String fullCommand) {
         String[] parsedInput = parseInput(fullCommand);
+        // Default to UNKNOWN so invalid commands can be handled without crashing.
         CommandType commandType = CommandType.UNKNOWN;
         for (CommandType type : CommandType.values()) {
             if (type.name().equals(parsedInput[0])) {

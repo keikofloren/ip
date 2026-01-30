@@ -39,7 +39,7 @@ public class TaskList {
     }
 
     /**
-     * Prints all tasks in the task list.
+     * Returns all tasks in the task list.
      */
     public String listTasks() {
         String message = "Okay! Here is your quest list!";
@@ -85,6 +85,21 @@ public class TaskList {
      * @throws InvalidCommandInputException If the index is out of range.
      */
     public Task getTask(String index) {
+        return this.getTask(parseUserIndexToZeroBased(index));
+    }
+
+    /**
+     * Converts a one-based task index provided by the user into a zero-based index.
+     *
+     * The index is validated to ensure it is present, numeric, and within the
+     * valid range of tasks.
+     *
+     * @param index One-based task index provided by the user.
+     * @return Zero-based index corresponding to the task.
+     * @throws InvalidCommandFormatException If the index is missing or not a number.
+     * @throws InvalidCommandInputException If the index is outside the valid range.
+     */
+    public int parseUserIndexToZeroBased(String index) {
         if (index == null || index.isBlank()) {
             throw new InvalidCommandFormatException(
                     "Oi, which task?!\n"
@@ -107,8 +122,7 @@ public class TaskList {
                             + numTasks + "!\n"
             );
         }
-        int i = Integer.parseInt(index);
-        return this.tasks.get(i - 1);
+        return taskIndex - 1;
     }
 
     /**
@@ -138,14 +152,14 @@ public class TaskList {
      * @return Task that was deleted.
      */
     public Task deleteTask(String index) {
+        int i = parseUserIndexToZeroBased(index);
         Task deletedTask = this.getTask(index);
-        int i = Integer.parseInt(index);
         this.tasks.remove(i - 1);
         return deletedTask;
     }
 
     /**
-     * Prints tasks whose descriptions contain the given keyword.
+     * Returns tasks whose descriptions contain the given keyword.
      *
      * @param keyword Keyword to search for in task descriptions.
      */
