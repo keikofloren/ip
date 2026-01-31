@@ -32,6 +32,7 @@ public class Parser {
         assert fullCommand != null : "Command should not be null";
         String[] parsedInput = parseInput(fullCommand);
         assert parsedInput.length == 2 : "parseInput must return [command, arg]";
+        // Default to UNKNOWN so invalid commands can be handled without crashing.
         CommandType commandType = CommandType.UNKNOWN;
         for (CommandType type : CommandType.values()) {
             if (type.name().equals(parsedInput[0])) {
