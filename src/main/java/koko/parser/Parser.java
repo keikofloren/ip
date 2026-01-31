@@ -29,7 +29,9 @@ public class Parser {
      * @return A Command representing the user's request.
      */
     public Command parse(String fullCommand) {
+        assert fullCommand != null : "Command should not be null";
         String[] parsedInput = parseInput(fullCommand);
+        assert parsedInput.length == 2 : "parseInput must return [command, arg]";
         // Default to UNKNOWN so invalid commands can be handled without crashing.
         CommandType commandType = CommandType.UNKNOWN;
         for (CommandType type : CommandType.values()) {
@@ -59,6 +61,7 @@ public class Parser {
      * @return A 2-element array containing the command word and argument.
      */
     private String[] parseInput(String fullCommand) {
+        assert fullCommand != null : "Command should not be null";
         String[] inputArray = fullCommand.split(" ", 2);
         String command = inputArray[0].toUpperCase();
         String arg = (inputArray.length == 2) ? inputArray[1] : "";
@@ -99,6 +102,7 @@ public class Parser {
             );
         }
         String[] argArray = arg.split(" /by ");
+        assert argArray.length == 2 : "Expected exactly one /by delimiter";
         String taskDescription = argArray[0];
         String deadline = argArray[1];
         DeadlineTask task = new DeadlineTask(taskDescription, deadline);
@@ -119,8 +123,10 @@ public class Parser {
             );
         }
         String[] argArray = arg.split(" /from ");
+        assert argArray.length == 2 : "Expected exactly one /from delimiter";
         String taskDescription = argArray[0];
         String[] argArray2 = argArray[1].split(" /to ");
+        assert argArray2.length == 2 : "Expected exactly one /to delimiter";
         String startTime = argArray2[0];
         String endTime = argArray2[1];
         EventTask task = new EventTask(taskDescription, startTime, endTime);

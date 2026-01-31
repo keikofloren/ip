@@ -27,6 +27,7 @@ public class TaskList {
      */
     public TaskList(ArrayList<Task> tasks) {
         this.tasks = tasks;
+        assert this.tasks != null : "TaskList should not be null";
     }
 
     /**
@@ -35,6 +36,7 @@ public class TaskList {
      * @param task Task to be added.
      */
     public void addTask(Task task) {
+        assert task != null : "Task to add must not be null";
         this.tasks.add(task);
     }
 
@@ -67,7 +69,7 @@ public class TaskList {
      */
     public Task getTask(int index) {
         int numTasks = this.numberOfTasks();
-        if (index < 0 || index > numTasks) {
+        if (index < 0 || index >= numTasks) {
             throw new InvalidCommandInputException(
                     "Ehh?! That task number doesn't exist! Please use a number from 1 to "
                             + numTasks + "!\n"
