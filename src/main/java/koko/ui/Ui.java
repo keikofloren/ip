@@ -23,6 +23,7 @@ public class Ui {
      */
     public Ui() {
         this.sc = new Scanner(System.in);
+        assert this.sc != null : "sc should not be null";
     }
 
     /**

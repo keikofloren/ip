@@ -32,11 +32,16 @@ public class MainWindow extends AnchorPane {
 
     @FXML
     public void initialize() {
+        assert scrollPane != null : "scrollPane should not be null";
+        assert dialogContainer != null : "dialogContainer should not be null";
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
     }
 
     /** Injects the Koko instance */
     public void setKoko(Koko k) {
+        assert k != null : "Koko should not be null";
+        assert dialogContainer != null : "dialogContainer should not be null";
+        assert kokoImage != null : "kokoImage should not be null";
         koko = k;
         dialogContainer.getChildren().add(
                 DialogBox.getKokoDialog(koko.showWelcome(), kokoImage)
@@ -49,6 +54,9 @@ public class MainWindow extends AnchorPane {
      */
     @FXML
     private void handleUserInput() {
+        assert userInput != null : "userInput should not be null";
+        assert dialogContainer != null : "dialogContainer should not be null";
+        assert kokoImage != null : "kokoImage should not be null";
         String input = userInput.getText();
         String response = koko.getResponse(input);
         dialogContainer.getChildren().addAll(

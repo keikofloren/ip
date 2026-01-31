@@ -42,6 +42,9 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage stage) {
+        assert Main.class.getResourceAsStream("/images/DaUser.jpg") != null : "Missing DaUser.jpg image";
+        assert Main.class.getResourceAsStream("/images/DaKoko.jpg") != null : "Missing DaKoko.jpg image";
+        assert koko != null : "koko should not be null";
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/MainWindow.fxml"));
             AnchorPane ap = fxmlLoader.load();
@@ -62,6 +65,9 @@ public class Main extends Application {
      * the dialog container. Clears the user input after processing.
      */
     private void handleUserInput() {
+        assert userInput != null : "userInput should not be null";
+        assert dialogContainer != null : "dialogContainer should not be null";
+        assert kokoImage != null : "kokoImage should not be null";
         String userText = userInput.getText();
         String kokoText = koko.getResponse(userInput.getText());
         dialogContainer.getChildren().addAll(
