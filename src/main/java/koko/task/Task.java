@@ -1,8 +1,6 @@
 package koko.task;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 
 import koko.exception.InvalidCommandFormatException;
 
@@ -93,6 +91,11 @@ public class Task {
         return this.isDone;
     }
 
+    /**
+     * Returns the time associated with this task.
+     *
+     * @return the task time, or null if this task has no associated time
+     */
     public LocalDateTime getTime() {
         return null;
     }

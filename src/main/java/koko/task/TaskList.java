@@ -53,6 +53,13 @@ public class TaskList {
         return message;
     }
 
+    /**
+     * Sorts the task list in chronological order based on task time.
+     *
+     * Tasks with an associated LocalDateTime are ordered from
+     * earliest to latest. Tasks without a time are placed after all timed
+     * tasks.
+     */
     public void sortTasks() {
         this.tasks.sort(
                 Comparator.comparing(
