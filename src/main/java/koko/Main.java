@@ -53,6 +53,7 @@ public class Main extends Application {
             stage.setMinHeight(220);
             stage.setMinWidth(417);
             stage.setMaxWidth(417);
+            stage.setTitle("Koko");
             fxmlLoader.<MainWindow>getController().setKoko(koko);
             stage.show();
         } catch (IOException e) {
