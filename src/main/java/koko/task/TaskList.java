@@ -1,6 +1,7 @@
 package koko.task;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import koko.exception.InvalidCommandFormatException;
 import koko.exception.InvalidCommandInputException;
@@ -38,6 +39,7 @@ public class TaskList {
     public void addTask(Task task) {
         assert task != null : "Task to add must not be null";
         this.tasks.add(task);
+        this.sortTasks();
     }
 
     /**
@@ -49,6 +51,15 @@ public class TaskList {
             message += "\n" + (i + 1) + ". " + tasks.get(i).toString();
         }
         return message;
+    }
+
+    public void sortTasks() {
+        this.tasks.sort(
+                Comparator.comparing(
+                        task -> task.getTime(),
+                        Comparator.nullsLast(Comparator.naturalOrder())
+                )
+        );
     }
 
     /**
@@ -157,6 +168,7 @@ public class TaskList {
         int i = parseUserIndexToZeroBased(index);
         Task deletedTask = this.getTask(index);
         this.tasks.remove(i - 1);
+        this.sortTasks();
         return deletedTask;
     }
 

@@ -61,4 +61,9 @@ public class DeadlineTask extends Task {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy HHmm");
         return super.getFileDescription() + " | by " + this.deadline.format(formatter);
     }
+
+    @Override
+    public LocalDateTime getTime() {
+        return this.deadline;
+    }
 }

@@ -1,5 +1,9 @@
 package koko.task;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 import koko.exception.InvalidCommandFormatException;
 
 /**
@@ -87,5 +91,9 @@ public class Task {
      */
     public boolean isDone() {
         return this.isDone;
+    }
+
+    public LocalDateTime getTime() {
+        return null;
     }
 }

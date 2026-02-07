@@ -71,4 +71,9 @@ public class EventTask extends Task {
                 + " | from " + this.startTime.format(formatter)
                 + " to " + this.endTime.format(formatter);
     }
+
+    @Override
+    public LocalDateTime getTime() {
+        return this.startTime;
+    }
 }
