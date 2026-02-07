@@ -13,18 +13,10 @@ import koko.task.ToDoTask;
  */
 public class Ui {
 
-    /** Scanner used to read user input from standard input. */
-    private Scanner sc;
-
     /**
-     * Returns the welcome message shown when the application starts.
-     *
-     * @return The welcome message.
+     * Constructs a Ui instance and initialises the input scanner.
      */
-    public Ui() {
-        this.sc = new Scanner(System.in);
-        assert this.sc != null : "sc should not be null";
-    }
+    public Ui() {}
 
     /**
      * Displays the welcome message to the user.
@@ -72,7 +64,7 @@ public class Ui {
     public String showAddTodoTask(ToDoTask task, TaskList taskList) {
         return "Hai!! Mission accepted!\n"
                         + task + "\n"
-                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list!\n";
+                        + "Now you have " + taskList.getNumberOfTasks() + " tasks in the list!\n";
     }
 
     /**
@@ -85,7 +77,7 @@ public class Ui {
     public String showAddDeadlineTask(DeadlineTask task, TaskList taskList) {
         return "Understood. I'll keep an eye on the clock.\n"
                         + task + "\n"
-                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list!\n";
+                        + "Now you have " + taskList.getNumberOfTasks() + " tasks in the list!\n";
     }
 
     /**
@@ -98,7 +90,7 @@ public class Ui {
     public String showAddEventTask(EventTask task, TaskList taskList) {
         return "Ooh, a schedule arc begins.\n"
                     + task + "\n"
-                    + "Now you have " + taskList.numberOfTasks() + " tasks in the list.\n";
+                    + "Now you have " + taskList.getNumberOfTasks() + " tasks in the list.\n";
     }
 
     /**
@@ -133,6 +125,6 @@ public class Ui {
     public String showDeleteTask(Task task, TaskList taskList) {
         return "Poof! That task has been erased from existence!\n"
                         + task + "\n"
-                        + "Now you have " + taskList.numberOfTasks() + " tasks in the list!\n";
+                        + "Now you have " + taskList.getNumberOfTasks() + " tasks in the list!\n";
     }
 }

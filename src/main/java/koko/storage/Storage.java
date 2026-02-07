@@ -40,7 +40,7 @@ public class Storage {
      * @return List of tasks loaded from disk.
      * @throws KokoException If the storage file cannot be read.
      */
-    public ArrayList<Task> load() throws KokoException {
+    public ArrayList<Task> loadTasks() throws KokoException {
         try {
             createFileIfMissing();
             ArrayList<Task> tasks = new ArrayList<>();
@@ -69,7 +69,7 @@ public class Storage {
         createFileIfMissing();
         try {
             FileWriter fw = new FileWriter(this.file);
-            for (int i = 0; i < taskList.numberOfTasks(); i++) {
+            for (int i = 0; i < taskList.getNumberOfTasks(); i++) {
                 fw.write(formatTask(taskList.getTask(i)) + System.lineSeparator());
             }
             fw.close();
@@ -118,18 +118,18 @@ public class Storage {
      * @return String representation of the task in storage format.
      */
     private String formatTask(Task task) {
-        String isDone = task.isDone() ? "1" : "0";
+        String doneFlag = task.isDone() ? "1" : "0";
         if (task instanceof ToDoTask) {
             ToDoTask t = (ToDoTask) task;
-            return "T | " + isDone + " | " + t.getFileDescription();
+            return "T | " + doneFlag + " | " + t.getFileDescription();
         } else if (task instanceof DeadlineTask) {
             DeadlineTask t = (DeadlineTask) task;
-            return "D | " + isDone + " | " + t.getFileDescription();
+            return "D | " + doneFlag + " | " + t.getFileDescription();
         } else if (task instanceof EventTask) {
             EventTask t = (EventTask) task;
-            return "E | " + isDone + " | " + t.getFileDescription();
+            return "E | " + doneFlag + " | " + t.getFileDescription();
         }
-        return "T | " + isDone + " | " + task.getFileDescription();
+        return "T | " + doneFlag + " | " + task.getFileDescription();
     }
 
     /**

@@ -74,7 +74,7 @@ public class TaskList {
      *
      * @return Number of tasks stored in the task list.
      */
-    public int numberOfTasks() {
+    public int getNumberOfTasks() {
         return tasks.size();
     }
 
@@ -86,7 +86,7 @@ public class TaskList {
      * @throws InvalidCommandInputException If the index is out of range.
      */
     public Task getTask(int index) {
-        int numTasks = this.numberOfTasks();
+        int numTasks = this.getNumberOfTasks();
         if (index < 0 || index >= numTasks) {
             throw new InvalidCommandInputException(
                     "Ehh?! That task number doesn't exist! Please use a number from 1 to "
@@ -135,7 +135,7 @@ public class TaskList {
                             + "Please state a task index!\n"
             );
         }
-        int numTasks = this.numberOfTasks();
+        int numTasks = this.getNumberOfTasks();
         if (taskIndex < 1 || taskIndex > numTasks) {
             throw new InvalidCommandInputException(
                     "Ehh?! That task number doesn't exist! Please use a number from 1 to "
@@ -187,7 +187,7 @@ public class TaskList {
     public String findTask(String keyword) {
         int taskCount = 1;
         String message = "Hai hai~! Here are the matching quests in your list!";
-        for (int i = 0; i < this.numberOfTasks(); i++) {
+        for (int i = 0; i < this.getNumberOfTasks(); i++) {
             Task task = this.getTask(i);
             if (task.getDescription().contains(keyword)) {
                 message += "\n" + taskCount + ". " + task;

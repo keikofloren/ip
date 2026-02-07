@@ -46,7 +46,7 @@ public class Koko {
         this.storage = new Storage(filePath);
         this.parser = new Parser();
         try {
-            this.taskList = new TaskList(this.storage.load());
+            this.taskList = new TaskList(this.storage.loadTasks());
         } catch (KokoException e) {
             this.ui.showError(e.getMessage());
             this.taskList = new TaskList();
@@ -58,10 +58,20 @@ public class Koko {
 
     }
 
+    /**
+     * Returns the welcome message shown when the application starts.
+     *
+     * @return the welcome message
+     */
     public String showWelcome() {
         return ui.showWelcome();
     }
 
+    /**
+     * Returns whether the application should terminate.
+     *
+     * @return true if an exit command has been issued, false otherwise
+     */
     public boolean isExit() {
         return isExit;
     }
