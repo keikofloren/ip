@@ -11,8 +11,9 @@ Koko is a simple command-line task manager that helps you track to-dos, deadline
 3. Press **Enter** (or click **Send**) to execute.
 
 Example:
+```
 todo borrow book
-
+```
 ---
 
 ## Features
@@ -141,6 +142,3 @@ Exits Koko.
 ```
 bye
 ```
-
-**Format**
-bye
