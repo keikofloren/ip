@@ -6,9 +6,13 @@ Koko is a simple command-line task manager that helps you track to-dos, deadline
 
 ## Quick Start
 
-1. Launch Koko.
-2. Type commands into the input box or console.
-3. Press **Enter** (or click **Send**) to execute.
+1. Ensure you have Java 17 or above installed in your Computer.
+Mac users: Ensure you have the precise JDK version prescribed here.
+2. Download the latest .jar file
+3. Copy the file to the folder you want to use as the home folder for the chatbot
+4. Open a command terminal, cd into the folder you put the jar file in, and use the java -jar koko.jar command to run the application.
+5. Type commands into the input box.
+6. Press **Enter** (or click **Send**) to execute.
 
 Example:
 ```
@@ -100,6 +104,10 @@ unmark INDEX
 ```
 unmark 2
 ```
+
+**Notes**
+- `INDEX` refers to the task number shown in the task list.
+  
 ---
 
 ### 8. Delete a Task: `delete`
@@ -116,6 +124,9 @@ delete INDEX
 delete 3
 ```
 
+**Notes**
+- `INDEX` refers to the task number shown in the task list.
+
 ---
 
 ### 9. Find Tasks by Keyword: `find`
@@ -131,6 +142,9 @@ find KEYWORD
 ```
 find cs2103
 ```
+
+**Notes**
+- The search is case-sensitive. e.g. `cs2103t` will not match `CS2103T` 
 
 ---
 
