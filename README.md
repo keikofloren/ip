@@ -1,26 +1,146 @@
-# Duke project template
+# Koko User Guide
 
-This is a project template for a greenfield Java project. It's named after the Java mascot _Duke_. Given below are instructions on how to use it.
+Koko is a simple command-line task manager that helps you track to-dos, deadlines, and events. You interact with Koko by typing commands in a single line.
 
-## Setting up in Intellij
+---
 
-Prerequisites: JDK 17, update Intellij to the most recent version.
+## Quick Start
 
-1. Open Intellij (if you are not in the welcome screen, click `File` > `Close Project` to close the existing project first)
-1. Open the project into Intellij as follows:
-   1. Click `Open`.
-   1. Select the project directory, and click `OK`.
-   1. If there are any further prompts, accept the defaults.
-1. Configure the project to use **JDK 17** (not other versions) as explained in [here](https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk).<br>
-   In the same dialog, set the **Project language level** field to the `SDK default` option.
-1. After that, locate the `src/main/java/Duke.java` file, right-click it, and choose `Run Duke.main()` (if the code editor is showing compile errors, try restarting the IDE). If the setup is correct, you should see something like the below as the output:
-   ```
-   Hello from
-    ____        _        
-   |  _ \ _   _| | _____ 
-   | | | | | | | |/ / _ \
-   | |_| | |_| |   <  __/
-   |____/ \__,_|_|\_\___|
-   ```
+1. Launch Koko.
+2. Type commands into the input box or console.
+3. Press **Enter** (or click **Send**) to execute.
 
-**Warning:** Keep the `src\main\java` folder as the root folder for Java files (i.e., don't rename those folders or move Java files to another folder outside of this folder path), as this is the default location some tools (e.g., Gradle) expect to find Java files.
+Example:
+todo borrow book
+
+---
+
+## Features
+
+---
+
+### 1. Add a To-Do Task: `todo`
+
+Adds a task with a description.
+
+**Format**
+```
+todo DESCRIPTION
+```
+
+**Example**
+```
+todo finish CS2103 tutorial
+```
+
+---
+
+### 2. Add a Deadline Task: `deadline`
+
+Adds a task with a description and a deadline time.
+
+**Format**
+```
+deadline DESCRIPTION /by dd/MM/yyyy HHmm
+```
+
+**Example**
+```
+deadline submit assignment /by 19/03/2026 2359
+```
+
+---
+
+### 4. Add an Event Task: `event`
+
+Adds a task with a description, a start time, and an end time.
+
+**Format**
+```
+event DESCRIPTION /from dd/MM/yyyy HHmm /to dd/MM/yyyy HHmm
+```
+
+**Example**
+```
+event tutorial /from 19/03/2026 1400 /to 19/03/2026 1500
+```
+
+---
+
+### 6. Mark a Task as Done: `mark`
+
+Marks the task at the given index as completed.
+
+**Format**
+```
+mark INDEX
+```
+
+**Example**
+```
+mark 2
+```
+
+**Notes**
+- `INDEX` refers to the task number shown in the task list.
+
+---
+
+### 7. Unmark a Task: `unmark`
+
+Marks the task at the given index as not completed.
+
+**Format**
+```
+unmark INDEX
+```
+
+**Example**
+```
+unmark 2
+```
+---
+
+### 8. Delete a Task: `delete`
+
+Deletes the task at the given index.
+
+**Format**
+```
+delete INDEX
+```
+
+**Example**
+```
+delete 3
+```
+
+---
+
+### 9. Find Tasks by Keyword: `find`
+
+Searches for tasks containing the given keyword.
+
+**Format**
+```
+find KEYWORD
+```
+
+**Example**
+```
+find cs2103
+```
+
+---
+
+### 10. Exit the Application: `bye`
+
+Exits Koko.
+
+**Format**
+```
+bye
+```
+
+**Format**
+bye
