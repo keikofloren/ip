@@ -1,30 +1,158 @@
-# Duke User Guide
+# Koko User Guide
 
-// Update the title above to match the actual product name
+Koko is a simple command-line task manager that helps you track to-dos, deadlines, and events. You interact with Koko by typing commands in a single line.
 
-// Product screenshot goes here
+---
 
-// Product intro goes here
+## Quick Start
 
-## Adding deadlines
+1. Ensure you have Java 17 or above installed in your Computer.
+Mac users: Ensure you have the precise JDK version prescribed here.
+2. Download the latest .jar file
+3. Copy the file to the folder you want to use as the home folder for the chatbot
+4. Open a command terminal, cd into the folder you put the jar file in, and use the java -jar koko.jar command to run the application.
+5. Type commands into the input box.
+6. Press **Enter** (or click **Send**) to execute.
 
-// Describe the action and its outcome.
-
-// Give examples of usage
-
-Example: `keyword (optional arguments)`
-
-// A description of the expected outcome goes here
-
+Example:
 ```
-expected output
+todo borrow book
+```
+---
+
+## Features
+
+---
+
+### 1. Add a To-Do Task: `todo`
+
+Adds a task with a description.
+
+**Format**
+```
+todo DESCRIPTION
 ```
 
-## Feature ABC
+**Example**
+```
+todo finish CS2103 tutorial
+```
 
-// Feature details
+---
 
+### 2. Add a Deadline Task: `deadline`
 
-## Feature XYZ
+Adds a task with a description and a deadline time.
 
-// Feature details
+**Format**
+```
+deadline DESCRIPTION /by dd/MM/yyyy HHmm
+```
+
+**Example**
+```
+deadline submit assignment /by 19/03/2026 2359
+```
+
+---
+
+### 4. Add an Event Task: `event`
+
+Adds a task with a description, a start time, and an end time.
+
+**Format**
+```
+event DESCRIPTION /from dd/MM/yyyy HHmm /to dd/MM/yyyy HHmm
+```
+
+**Example**
+```
+event tutorial /from 19/03/2026 1400 /to 19/03/2026 1500
+```
+
+---
+
+### 6. Mark a Task as Done: `mark`
+
+Marks the task at the given index as completed.
+
+**Format**
+```
+mark INDEX
+```
+
+**Example**
+```
+mark 2
+```
+
+**Notes**
+- `INDEX` refers to the task number shown in the task list.
+
+---
+
+### 7. Unmark a Task: `unmark`
+
+Marks the task at the given index as not completed.
+
+**Format**
+```
+unmark INDEX
+```
+
+**Example**
+```
+unmark 2
+```
+
+**Notes**
+- `INDEX` refers to the task number shown in the task list.
+  
+---
+
+### 8. Delete a Task: `delete`
+
+Deletes the task at the given index.
+
+**Format**
+```
+delete INDEX
+```
+
+**Example**
+```
+delete 3
+```
+
+**Notes**
+- `INDEX` refers to the task number shown in the task list.
+
+---
+
+### 9. Find Tasks by Keyword: `find`
+
+Searches for tasks containing the given keyword.
+
+**Format**
+```
+find KEYWORD
+```
+
+**Example**
+```
+find cs2103
+```
+
+**Notes**
+- The search is case-sensitive. e.g. `cs2103t` will not match `CS2103T` 
+
+---
+
+### 10. Exit the Application: `bye`
+
+Exits Koko.
+
+**Format**
+```
+bye
+```
