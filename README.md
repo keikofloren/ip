@@ -7,7 +7,7 @@ Koko is a simple command-line task manager that helps you track to-dos, deadline
 ## Quick Start
 
 1. Ensure you have Java 17 or above installed in your Computer.
-Mac users: Ensure you have the precise JDK version prescribed here.
+Mac users: Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 2. Download the latest .jar file
 3. Copy the file to the folder you want to use as the home folder for the chatbot
 4. Open a command terminal, cd into the folder you put the jar file in, and use the java -jar koko.jar command to run the application.
@@ -88,6 +88,7 @@ mark 2
 
 **Notes**
 - `INDEX` refers to the task number shown in the task list.
+- The index must be a positive integer 1, 2, 3, ...
 
 ---
 
@@ -107,6 +108,7 @@ unmark 2
 
 **Notes**
 - `INDEX` refers to the task number shown in the task list.
+- The index must be a positive integer 1, 2, 3, ...
   
 ---
 
@@ -126,6 +128,7 @@ delete 3
 
 **Notes**
 - `INDEX` refers to the task number shown in the task list.
+- The index must be a positive integer 1, 2, 3, ...
 
 ---
 
@@ -144,7 +147,10 @@ find cs2103
 ```
 
 **Notes**
-- The search is case-sensitive. e.g. `cs2103t` will not match `CS2103T` 
+- The search is case-sensitive. e.g. `cs2103t` will not match `CS2103T`
+- The order of keywords matters. e.g. `CS2103T Tutorial` will not match `Tutorial CS2103T`
+- Only full words will be matched. e.g. `CS2103` will not match `CS2103T`
+- Tasks matching at least one keyword will be returned. e.g. `CS2103T` will return `CS2103T Tutorial`, `CS2103T Lecture` 
 
 ---
 
